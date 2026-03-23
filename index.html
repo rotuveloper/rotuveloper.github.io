@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- SEO PRIMARY -->
-  <title>Desarrollador de Páginas Web Profesionales | Rotuveloper — Merlo, Buenos Aires</title>
+  <title>Desarrollador de Páginas Web Profesionales | Rotuveloper — Argentina, Buenos Aires</title>
   <meta name="description" content="¿Necesitás una página web profesional? En Rotuveloper creamos sitios web a medida para negocios y emprendedores. Precio accesible, entrega rápida. Consultá sin cargo." />
   <meta name="keywords" content="desarrollador de páginas web, crear página web profesional, comprar página web, precio página web Argentina, diseño web profesional, página web para negocio, diseñador web Merlo, diseño web Buenos Aires, cuánto cuesta una página web, página web para emprendedores, desarrollo web Argentina, crear sitio web barato, web para pymes, diseño web económico" />
   <meta name="author" content="Lautaro Rotunno — Rotuveloper" />
@@ -98,7 +98,7 @@
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: auto; } /* desactivamos el nativo para usar el nuestro */
 
     body {
       background: var(--black);
@@ -372,6 +372,7 @@
       background: var(--green-glow);
       box-shadow: 0 0 20px var(--green-glow);
     }
+    .service-card .btn-secondary { cursor: pointer; }
     .hero-stats {
       display: flex;
       gap: 2rem;
@@ -566,6 +567,7 @@
       transition: all 0.4s;
       cursor: default;
     }
+    .service-card a { cursor: pointer; }
     .service-card::before {
       content: '';
       position: absolute;
@@ -573,6 +575,7 @@
       background: linear-gradient(135deg, var(--green-glow) 0%, transparent 60%);
       opacity: 0;
       transition: opacity 0.4s;
+      pointer-events: none;
     }
     .service-card:hover { border-color: var(--green-dark); transform: translateY(-6px); box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 30px rgba(0,255,65,0.1); }
     .service-card:hover::before { opacity: 1; }
@@ -997,6 +1000,7 @@
     /* RESPONSIVE */
     @media (max-width: 1024px) {
       .services-grid, .portfolio-grid, .testimonials-grid, .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+      .sinweb-grid { grid-template-columns: repeat(2, 1fr) !important; }
     }
     @media (max-width: 768px) {
       .nav-links { display: none; }
@@ -1008,6 +1012,7 @@
       .about-grid { grid-template-columns: 1fr; gap: 2rem; }
       .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
       .services-grid, .portfolio-grid, .testimonials-grid, .pricing-grid { grid-template-columns: 1fr; }
+      .sinweb-grid { grid-template-columns: 1fr !important; }
       h1 { font-size: 2.2rem; }
       section { padding-top: 5rem; padding-bottom: 5rem; }
     }
@@ -1044,32 +1049,32 @@
 <section id="hero">
   <div class="hero-content">
     <div class="hero-left">
-      <div class="hero-badge">Disponible para nuevos proyectos</div>
-      <div class="hero-label">Desarrollo Web · Diseño · Soporte Técnico</div>
+      <div class="hero-badge">Solo acepto 3 proyectos nuevos por mes — quedan lugares</div>
+      <div class="hero-label">Desarrollador Web · Argentina · Diseño · Tu negocio YA</div>
       <h1>
-        Desarrollador de páginas web profesionales —
-        <span class="highlight">a medida para tu negocio.</span>
+        Tu competencia ya tiene web.
+        <span class="highlight">¿Cuántos clientes estás perdiendo hoy?</span>
       </h1>
       <p class="hero-desc">
-        Creo páginas web profesionales que convierten visitas en clientes. También reparo y optimizo computadoras. Trabajo rápido, precio justo, resultados reales.
+        Creo páginas web profesionales para negocios y emprendedores que quieren vender más. Diseño a medida, entrega en 7 días, resultados desde el primer mes. <strong style="color:var(--green)">Primera consulta sin cargo.</strong>
       </p>
       <div class="hero-actions">
         <a href="https://wa.me/5491144709014?text=Hola,%20quiero%20una%20página%20web%20profesional" class="btn-primary" target="_blank" rel="noopener">
-          💬 Quiero mi web ahora
+          Quiero más clientes →
         </a>
-        <a href="#servicios" class="btn-secondary">Ver servicios →</a>
+        <a href="#sin-web" class="btn-secondary">¿Qué perdés sin web?</a>
       </div>
       <div class="hero-stats">
         <div class="stat">
-          <div class="stat-num">50+</div>
-          <div class="stat-label">Proyectos entregados</div>
+          <div class="stat-num">7</div>
+          <div class="stat-label">Días promedio de entrega</div>
         </div>
         <div class="stat">
-          <div class="stat-num">100%</div>
-          <div class="stat-label">Clientes satisfechos</div>
+          <div class="stat-num">5+</div>
+          <div class="stat-label">Años de experiencia</div>
         </div>
         <div class="stat">
-          <div class="stat-num">48hs</div>
+          <div class="stat-num">24hs</div>
           <div class="stat-label">Tiempo de respuesta</div>
         </div>
       </div>
@@ -1096,26 +1101,26 @@
 <section id="sobre-mi">
   <div class="container">
     <div class="section-label">Sobre mí</div>
-    <h2>Técnico en informática.<br>Apasionado por el código.</h2>
+    <h2>Soy el desarrollador web<br>que tu negocio necesita.</h2>
     <div class="section-divider"></div>
     <div class="about-grid">
       <div class="about-img-wrap reveal">
         <div class="about-avatar">
           <div class="corner-dec tl"></div>
           <div class="corner-dec br"></div>
-          <img src="https://img.lightshot.app/M7umqsVqQ8qJS0JALHuIJg.png" alt="Lautaro Rotunno — Rotuveloper" class="about-avatar-icon" style="width:100%;height:100%;object-fit:cover;object-position:top;border-radius:4px;position:relative;z-index:1;"/>
+          <img src="https://img.lightshot.app/M7umqsVqQ8qJS0JALHuIJg.png" alt="Lautaro Rotunno — Desarrollador web en Buenos Aires" class="about-avatar-icon" style="width:100%;height:100%;object-fit:cover;object-position:top;border-radius:4px;position:relative;z-index:1;"/>
         </div>
       </div>
       <div class="about-text reveal reveal-delay-1">
-        <h3 style="font-size:1.5rem; margin-bottom:1rem;">Hola, soy el fundador de Rotuveloper</h3>
+        <h3 style="font-size:1.5rem; margin-bottom:1rem;">Hola, soy Lautaro — fundador de Rotuveloper</h3>
         <p>
-          Soy técnico en informática con más de 5 años de experiencia en desarrollo web y soporte técnico. Me especializo en construir presencias digitales que no solo lucen bien, sino que <strong style="color:var(--green)">generan resultados concretos</strong> para tu negocio.
+          Con más de 5 años desarrollando páginas web profesionales en Argentina, sé exactamente qué necesita un negocio para destacarse online y atraer clientes de forma constante.
         </p>
         <p>
-          Trabajo con negocios locales, emprendedores y profesionales que necesitan dar el salto digital de forma seria y sin gastar de más. Si no tenés página web hoy, tu competencia ya te lleva ventaja.
+          Trabajo directamente con vos — sin intermediarios, sin agencias que cobran el doble. Cada web que construyo está pensada para <strong style="color:var(--green)">generar consultas, llamadas y ventas reales.</strong>
         </p>
         <p>
-          Mi compromiso: atención personalizada, código limpio, diseño profesional y soporte post-entrega. Sin letras chicas.
+          Trabajo con emprendedores, negocios locales y profesionales de todo el país. Si no tenés página web hoy, tu competencia ya te lleva ventaja — y cada día que pasa, ese número crece.
         </p>
         <div class="skills-grid">
           <div class="skill-item">HTML5 / CSS3 / JS</div>
@@ -1127,6 +1132,9 @@
           <div class="skill-item">Google Ads básico</div>
           <div class="skill-item">Soporte técnico</div>
         </div>
+        <div style="margin-top:1.5rem;">
+          <a href="https://wa.me/5491144709014?text=Hola%20Lautaro!%20Vi%20tu%20web%20y%20quiero%20saber%20más" class="btn-primary" target="_blank" rel="noopener">Hablar con Lautaro →</a>
+        </div>
       </div>
     </div>
   </div>
@@ -1136,50 +1144,59 @@
 <section id="servicios">
   <div class="container">
     <div class="section-label">Servicios</div>
-    <h2>Todo lo que tu negocio<br>necesita para crecer online.</h2>
+    <h2>Cada servicio está diseñado<br>para hacerte ganar más clientes.</h2>
     <div class="section-divider"></div>
     <div class="services-grid">
 
       <div class="service-card reveal">
         <span class="service-num">01</span>
         <span class="service-icon">🌐</span>
-        <h3>Desarrollo Web Profesional</h3>
-        <p>Tu página web es tu vendedor 24/7. Te construyo un sitio moderno, rápido y optimizado que convierte visitantes en clientes reales.</p>
+        <h3>Página Web Profesional</h3>
+        <p>Tu web trabaja para vos las 24 horas, los 7 días. Mientras dormís, potenciales clientes te encuentran, te conocen y te eligen. Sin web, eso no existe.</p>
         <ul class="service-features">
-          <li>Diseño único y personalizado para tu marca</li>
-          <li>Código limpio y optimizado para velocidad</li>
-          <li>Responsive: perfecto en celular y PC</li>
-          <li>Integración con WhatsApp y redes sociales</li>
-          <li>Dominio y hosting incluidos (plan premium)</li>
+          <li>Diseño único que transmite confianza desde el primer segundo</li>
+          <li>Carga rápida: el 53% abandona si tarda más de 3 segundos</li>
+          <li>Perfecta en celular — donde está el 80% de tus clientes</li>
+          <li>Botón de WhatsApp directo para que te contacten al instante</li>
+          <li>Posicionada en Google desde el día uno</li>
         </ul>
+        <div style="margin-top:1.5rem;">
+          <a href="https://wa.me/5491144709014?text=Quiero%20una%20página%20web%20profesional" class="btn-secondary" target="_blank" rel="noopener" style="font-size:0.78rem;">Quiero mi web →</a>
+        </div>
       </div>
 
       <div class="service-card reveal reveal-delay-1">
         <span class="service-num">02</span>
         <span class="service-icon">🎨</span>
         <h3>Diseño Web y Branding</h3>
-        <p>Imagen profesional que genera confianza. Tu marca debe transmitir calidad antes de que el cliente lea una sola palabra.</p>
+        <p>En menos de 5 segundos, un visitante decide si confía en tu marca o se va. El diseño no es decoración — es tu primer argumento de venta.</p>
         <ul class="service-features">
-          <li>Identidad visual para tu marca o negocio</li>
-          <li>Diseño de logotipo y paleta de colores</li>
-          <li>Landing pages de alta conversión</li>
-          <li>Banners, flyers y material digital</li>
-          <li>Optimización SEO incluida</li>
+          <li>Identidad visual que comunica profesionalismo al instante</li>
+          <li>Landing pages diseñadas para convertir, no solo para verse bien</li>
+          <li>Marca consistente en web, redes y materiales digitales</li>
+          <li>Paleta de colores y tipografías que generan confianza</li>
+          <li>SEO integrado desde el diseño para posicionarte en Google</li>
         </ul>
+        <div style="margin-top:1.5rem;">
+          <a href="https://wa.me/5491144709014?text=Quiero%20mejorar%20el%20diseño%20de%20mi%20marca" class="btn-secondary" target="_blank" rel="noopener" style="font-size:0.78rem;">Mejorar mi imagen →</a>
+        </div>
       </div>
 
       <div class="service-card reveal reveal-delay-2">
         <span class="service-num">03</span>
         <span class="service-icon">🔧</span>
         <h3>Reparación de Computadoras</h3>
-        <p>¿Tu PC va lenta, se cuelga o no enciende? Diagnostico el problema y lo resuelvo de forma rápida y garantizada.</p>
+        <p>Una PC lenta o con virus no es solo molestia — es tiempo perdido y trabajo acumulado. Lo diagnostico, lo resuelvo y te lo entrego el mismo día.</p>
         <ul class="service-features">
-          <li>Formateo e instalación de Windows/Linux</li>
-          <li>Limpieza de virus y malware</li>
-          <li>Optimización y aumento de rendimiento</li>
-          <li>Instalación y configuración de programas</li>
-          <li>Limpieza interna y cambio de pasta térmica</li>
+          <li>Formateo e instalación de Windows — como nueva en horas</li>
+          <li>Eliminación total de virus y malware</li>
+          <li>Optimización real: mejoras de hasta un 300% en rendimiento</li>
+          <li>Instalación de todos tus programas incluida</li>
+          <li>Limpieza interna y cambio de pasta térmica para que no se caliente</li>
         </ul>
+        <div style="margin-top:1.5rem;">
+          <a href="https://wa.me/5491144709014?text=Necesito%20reparar%20mi%20computadora" class="btn-secondary" target="_blank" rel="noopener" style="font-size:0.78rem;">Reparar mi PC →</a>
+        </div>
       </div>
 
     </div>
@@ -1190,73 +1207,73 @@
 <section id="portfolio">
   <div class="container">
     <div class="section-label">Portfolio</div>
-    <h2>Proyectos que hablan<br>por sí mismos.</h2>
+    <h2>Resultados reales<br>para negocios reales.</h2>
     <div class="section-divider"></div>
     <div class="portfolio-grid">
 
       <a class="portfolio-card reveal" href="pizzeria-don-marcos.html" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block;">
         <div class="portfolio-thumb" style="padding:0;overflow:hidden;">
-          <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&q=80" alt="Pizzería Don Marcos" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s;"/>
+          <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&q=80" alt="Pizzería Don Marcos — Página web para restaurante" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s;"/>
         </div>
         <div class="portfolio-info">
           <div class="portfolio-tag">Restaurante · Landing Page</div>
           <h3>Pizzería Don Marcos</h3>
-          <p>Sitio con carta digital, botón de pedido por WhatsApp y galería de fotos. Aumento del 40% en consultas el primer mes.</p>
+          <p>Carta digital con pedidos por WhatsApp. <strong style="color:var(--green)">+40% de consultas en el primer mes.</strong> El dueño dejó de depender solo del boca a boca.</p>
         </div>
       </a>
 
       <a class="portfolio-card reveal reveal-delay-1" href="estudio-ferreyra.html" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block;">
         <div class="portfolio-thumb" style="padding:0;overflow:hidden;">
-          <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&q=80" alt="Estudio Ferreyra" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s;"/>
+          <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&q=80" alt="Estudio Jurídico Ferreyra — Página web corporativa" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s;"/>
         </div>
         <div class="portfolio-info">
           <div class="portfolio-tag">Servicios Profesionales · Corporativo</div>
           <h3>Estudio Jurídico Ferreyra</h3>
-          <p>Sitio corporativo con diseño formal, sección de áreas de práctica y formulario de consulta. Imagen 100% profesional.</p>
+          <p>Web formal con formulario de consulta. <strong style="color:var(--green)">Los clientes llegan con más confianza</strong> y el estudio cerró un 30% más de casos desde el lanzamiento.</p>
         </div>
       </a>
 
       <a class="portfolio-card reveal reveal-delay-2" href="gympro-suplementos.html" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block;">
         <div class="portfolio-thumb" style="padding:0;overflow:hidden;">
-          <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&q=80" alt="GymPro Suplementos" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s;"/>
+          <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&q=80" alt="GymPro Suplementos — Tienda online" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s;"/>
         </div>
         <div class="portfolio-info">
           <div class="portfolio-tag">Fitness · E-commerce</div>
           <h3>GymPro Suplementos</h3>
-          <p>Tienda online con catálogo de productos, pasarela de pago y diseño dinámico orientado a conversión.</p>
+          <p>Tienda online con catálogo completo y diseño agresivo. <strong style="color:var(--green)">Ventas online desde el día 1</strong>, sin depender de marketplaces con comisiones.</p>
         </div>
       </a>
 
       <a class="portfolio-card reveal" href="inmosur-propiedades.html" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block;">
         <div class="portfolio-thumb" style="padding:0;overflow:hidden;">
-          <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80" alt="InmoSur Propiedades" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s;"/>
+          <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80" alt="InmoSur Propiedades — Portal inmobiliario" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s;"/>
         </div>
         <div class="portfolio-info">
           <div class="portfolio-tag">Inmobiliaria · Catálogo</div>
           <h3>InmoSur Propiedades</h3>
-          <p>Portal inmobiliario con filtros de búsqueda, galería de propiedades y formulario de contacto por propiedad.</p>
+          <p>Portal con búsqueda de propiedades y contacto directo por WhatsApp. <strong style="color:var(--green)">Duplicó las consultas</strong> frente a solo publicar en portales externos.</p>
         </div>
       </a>
 
       <a class="portfolio-card reveal reveal-delay-1" href="spa-serenidad.html" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block;">
         <div class="portfolio-thumb" style="padding:0;overflow:hidden;">
-          <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&q=80" alt="Spa Serenidad" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s;"/>
+          <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&q=80" alt="Spa Serenidad — Página web con reservas online" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s;"/>
         </div>
         <div class="portfolio-info">
           <div class="portfolio-tag">Bienestar · Reservas Online</div>
           <h3>Centro Spa Serenidad</h3>
-          <p>Sitio de spa con sistema de reserva de turnos, galería visual elegante y fidelización de clientes.</p>
+          <p>Reservas de turnos directo desde la web. <strong style="color:var(--green)">Agenda completa cada semana</strong> y reducción del 80% en llamadas para coordinar turnos.</p>
         </div>
       </a>
 
       <a class="portfolio-card reveal reveal-delay-2" href="metalurgica-rodriguez.html" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block;">
         <div class="portfolio-thumb" style="padding:0;overflow:hidden;">
-          <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=600&q=80" alt="Metalúrgica Rodríguez" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s;"/>
+          <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=600&q=80" alt="Metalúrgica Rodríguez — Catálogo industrial digital" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s;"/>
         </div>
         <div class="portfolio-info">
           <div class="portfolio-tag">Industria · Catálogo Digital</div>
           <h3>Metalúrgica Rodríguez</h3>
-          <p>Catálogo de productos industriales con fichas técnicas descargables y formulario de cotización rápida.</p>
+          <p>Catálogo técnico online con cotización por WhatsApp. <strong style="color:var(--green)">Clientes nuevos de otras provincias</strong> que nunca hubieran llegado sin presencia web.</p>
         </div>
       </a>
 
@@ -1267,11 +1284,84 @@
   </div>
 </section>
 
+<!-- SIN WEB -->
+<section id="sin-web" style="padding:8rem 2rem;background:var(--black);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="section-label">La realidad</div>
+    <h2>¿Qué pasa si tu negocio<br>no tiene página web?</h2>
+    <div class="section-divider"></div>
+    <p style="color:var(--text-muted);margin-top:1rem;margin-bottom:3rem;font-size:1rem;max-width:600px;line-height:1.7;">Cada día que pasa sin web, tu competencia gana terreno. Estos son los costos reales de no tener presencia digital:</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;" class="sinweb-grid">
+      <div class="reveal" style="background:var(--card);border:1px solid #2a1a1a;border-left:3px solid #c0392b;padding:2rem;border-radius:4px;">
+        <div style="font-size:2rem;margin-bottom:1rem;">📉</div>
+        <h3 style="font-size:1.1rem;margin-bottom:0.8rem;color:var(--text);">Perdés clientes todos los días</h3>
+        <p style="color:var(--text-muted);font-size:0.88rem;line-height:1.7;">El 81% de los consumidores busca en Google antes de comprar. Si no aparecés, no existís. Esos clientes van directo a tu competencia.</p>
+      </div>
+      <div class="reveal reveal-delay-1" style="background:var(--card);border:1px solid #2a1a1a;border-left:3px solid #c0392b;padding:2rem;border-radius:4px;">
+        <div style="font-size:2rem;margin-bottom:1rem;">🤷</div>
+        <h3 style="font-size:1.1rem;margin-bottom:0.8rem;color:var(--text);">Tu negocio no parece serio</h3>
+        <p style="color:var(--text-muted);font-size:0.88rem;line-height:1.7;">Sin web, el 75% de las personas duda de la credibilidad de tu negocio. Una web profesional es tu carta de presentación — y la primera impresión no se puede repetir.</p>
+      </div>
+      <div class="reveal reveal-delay-2" style="background:var(--card);border:1px solid #2a1a1a;border-left:3px solid #c0392b;padding:2rem;border-radius:4px;">
+        <div style="font-size:2rem;margin-bottom:1rem;">💸</div>
+        <h3 style="font-size:1.1rem;margin-bottom:0.8rem;color:var(--text);">Dependés del boca a boca</h3>
+        <p style="color:var(--text-muted);font-size:0.88rem;line-height:1.7;">El boca a boca tiene límites. Una web te da alcance ilimitado: clientes de otro barrio, otra ciudad, otro turno. Trabajás, y la web sigue vendiendo sola.</p>
+      </div>
+      <div class="reveal" style="background:var(--card);border:1px solid #2a1a1a;border-left:3px solid #c0392b;padding:2rem;border-radius:4px;">
+        <div style="font-size:2rem;margin-bottom:1rem;">📵</div>
+        <h3 style="font-size:1.1rem;margin-bottom:0.8rem;color:var(--text);">No podés mostrar lo que hacés</h3>
+        <p style="color:var(--text-muted);font-size:0.88rem;line-height:1.7;">No tenés dónde mostrar tu trabajo, tus precios ni tus diferencias. El cliente no puede compararte — y si no puede compararte, elige al que sí se puede ver.</p>
+      </div>
+      <div class="reveal reveal-delay-1" style="background:var(--card);border:1px solid #2a1a1a;border-left:3px solid #c0392b;padding:2rem;border-radius:4px;">
+        <div style="font-size:2rem;margin-bottom:1rem;">⏰</div>
+        <h3 style="font-size:1.1rem;margin-bottom:0.8rem;color:var(--text);">Perdés tiempo en consultas básicas</h3>
+        <p style="color:var(--text-muted);font-size:0.88rem;line-height:1.7;">Sin web, respondés lo mismo una y otra vez: precios, horarios, servicios. Una web te automatiza eso y te deja tiempo para lo que importa: atender y vender.</p>
+      </div>
+      <div class="reveal reveal-delay-2" style="background:rgba(0,255,65,0.04);border:1px solid var(--green-dark);padding:2rem;border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;">
+        <div style="font-size:2rem;margin-bottom:1rem;">✅</div>
+        <h3 style="font-size:1.1rem;margin-bottom:0.8rem;color:var(--green);">La solución es simple</h3>
+        <p style="color:var(--text-muted);font-size:0.88rem;line-height:1.7;margin-bottom:1.5rem;">En 7 días tenés tu web lista, online y trabajando para vos. Consulta sin cargo, sin compromiso.</p>
+        <a href="https://wa.me/5491144709014?text=Quiero%20que%20mi%20negocio%20tenga%20página%20web" class="btn-primary" target="_blank" rel="noopener" style="font-size:0.82rem;">Empezar ahora →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GARANTIA -->
+<section style="padding:5rem 2rem;background:var(--darker);">
+  <div class="container">
+    <div style="max-width:800px;margin:0 auto;text-align:center;background:var(--card);border:1px solid var(--green-dark);border-radius:4px;padding:3rem;position:relative;overflow:hidden;" class="reveal">
+      <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,255,65,0.04) 0%,transparent 60%);pointer-events:none;"></div>
+      <div style="font-size:2.5rem;margin-bottom:1rem;">🛡️</div>
+      <div style="font-family:var(--font-mono);font-size:0.72rem;color:var(--green);letter-spacing:3px;text-transform:uppercase;margin-bottom:0.8rem;">// Garantía Rotuveloper</div>
+      <h2 style="font-size:clamp(1.5rem,3vw,2.2rem);margin-bottom:1rem;">Trabajo hasta que estés<br><span style="color:var(--green);">100% conforme.</span></h2>
+      <p style="color:var(--text-muted);font-size:1rem;line-height:1.8;max-width:550px;margin:0 auto 2rem;">Entrego revisiones ilimitadas hasta que la web sea exactamente lo que imaginabas. No cobro el saldo final hasta que vos estés satisfecho con el resultado. Sin letra chica, sin sorpresas.</p>
+      <div style="display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-bottom:2rem;">
+        <div style="text-align:center;">
+          <div style="font-family:var(--font-code);font-size:1.4rem;color:var(--green);font-weight:700;">Revisiones</div>
+          <div style="font-size:0.75rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px;">Ilimitadas</div>
+        </div>
+        <div style="width:1px;background:var(--border);"></div>
+        <div style="text-align:center;">
+          <div style="font-family:var(--font-code);font-size:1.4rem;color:var(--green);font-weight:700;">Entrega</div>
+          <div style="font-size:0.75rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px;">7 días promedio</div>
+        </div>
+        <div style="width:1px;background:var(--border);"></div>
+        <div style="text-align:center;">
+          <div style="font-family:var(--font-code);font-size:1.4rem;color:var(--green);font-weight:700;">Pago final</div>
+          <div style="font-size:0.75rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px;">Al aprobar el diseño</div>
+        </div>
+      </div>
+      <a href="https://wa.me/5491144709014?text=Quiero%20saber%20más%20sobre%20la%20garantía%20de%20Rotuveloper" class="btn-primary" target="_blank" rel="noopener">Quiero esta garantía →</a>
+    </div>
+  </div>
+</section>
+
 <!-- TESTIMONIOS -->
 <section id="testimonios">
   <div class="container">
     <div class="section-label">Testimonios</div>
-    <h2>Lo que dicen<br>mis clientes.</h2>
+    <h2>Clientes que apostaron<br>por tener presencia digital.</h2>
     <div class="section-divider"></div>
     <div class="testimonials-grid">
 
@@ -1282,7 +1372,7 @@
           Tenía miedo de que fuera muy caro o complicado tener una web. Me sorprendió lo fácil que fue trabajar con Rotuveloper. En una semana ya tenía mi página funcionando y los clientes empezaron a contactarme por ahí. Totalmente recomendable.
         </p>
         <div class="testimonial-author">
-          <div class="author-avatar" style="overflow:hidden;padding:0;"><img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=100&q=80" alt="Laura Gómez" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"/></div>
+          <div class="author-avatar" style="overflow:hidden;padding:0;"><img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&q=80" alt="Laura Gómez" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"/></div>
           <div>
             <div class="author-name">Laura Gómez</div>
             <div class="author-role">Dueña — Catering La Vecindad, CABA</div>
@@ -1297,7 +1387,7 @@
           Mi computadora tardaba 20 minutos en encender y tenía virus por todos lados. Rotuveloper la formateó, la limpió y la dejó como nueva en el día. Precio justo y muy buen trato. Ya lo recomendé a toda mi familia.
         </p>
         <div class="testimonial-author">
-          <div class="author-avatar" style="overflow:hidden;padding:0;"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80" alt="Carlos Méndez" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"/></div>
+          <div class="author-avatar" style="overflow:hidden;padding:0;"><img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?w=100&q=80" alt="Carlos Méndez" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"/></div>
           <div>
             <div class="author-name">Carlos Méndez</div>
             <div class="author-role">Contador — Merlo, Buenos Aires</div>
@@ -1312,7 +1402,7 @@
           Necesitaba una web urgente para mi estudio y en menos de una semana la tuve lista. El diseño quedó espectacular, muy profesional. Mis colegas me preguntan quién me la hizo. Sin dudas vuelvo para la segunda etapa.
         </p>
         <div class="testimonial-author">
-          <div class="author-avatar" style="overflow:hidden;padding:0;"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80" alt="Daniela Vázquez" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"/></div>
+          <div class="author-avatar" style="overflow:hidden;padding:0;"><img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&q=80" alt="Daniela Vázquez" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"/></div>
           <div>
             <div class="author-name">Daniela Vázquez</div>
             <div class="author-role">Abogada — San Justo, Buenos Aires</div>
@@ -1328,10 +1418,10 @@
 <section id="precios">
   <div class="container">
     <div class="section-label">Precios orientativos</div>
-    <h2>Inversión, no gasto.<br>Planes para cada etapa.</h2>
+    <h2>Invertí una vez.<br>Recibí clientes para siempre.</h2>
     <div class="section-divider"></div>
     <p style="color:var(--text-muted);margin-top:1rem;font-size:0.9rem;" class="reveal">
-      Los precios son orientativos y en pesos argentinos. Cada proyecto es único — pedime una cotización sin compromiso.
+      Precios en pesos argentinos. Cada proyecto es único — pedime una cotización sin cargo. <strong style="color:var(--green);">Solo acepto 3 proyectos nuevos por mes para garantizar calidad.</strong>
     </p>
     <div class="pricing-grid">
 
@@ -1432,13 +1522,13 @@
 <section id="contacto">
   <div class="container">
     <div class="section-label">Contacto</div>
-    <h2>Hablemos de<br>tu próximo proyecto.</h2>
+    <h2>Cada día sin web<br>es un cliente que perdés.</h2>
     <div class="section-divider"></div>
     <div class="contact-grid">
       <div class="contact-info reveal">
-        <h3>¿Listo para dar el salto?</h3>
+        <h3>Consultá ahora — sin cargo y sin compromiso</h3>
         <p>
-          No esperes más para tener presencia online. Cada día sin página web es un cliente que se va con tu competencia. Escribime y en menos de 24 horas te respondo con una propuesta personalizada.
+          Respondido personalmente por Lautaro en menos de 24 horas. Contame tu negocio, qué necesitás y te armo una propuesta a medida. Sin letras chicas, sin presiones.
         </p>
         <div class="contact-items">
           <div class="contact-item">
@@ -1452,7 +1542,7 @@
             <div class="contact-item-icon">📧</div>
             <div class="contact-item-text">
               <div class="contact-item-label">Email</div>
-              <div class="contact-item-value"><a id="contact-email" href="#" style="color:inherit;text-decoration:none;">lautarorotunno2007@gmail.com</a></div>
+              <div class="contact-item-value"><a id="contact-email" href="/cdn-cgi/l/email-protection#f995988c8d988b968b968d8c979796cbc9c9ceb99e94989095d79a9694" style="color:inherit;text-decoration:none;"><span class="__cf_email__" data-cfemail="5935382c2d382b362b362d2c3737366b69696e193e34383035773a3634">[email&#160;protected]</span></a></div>
             </div>
           </div>
           <div class="contact-item">
@@ -1646,13 +1736,52 @@ document.addEventListener('DOMContentLoaded', function() {
     el.href = 'mailto:' + u + '@' + d;
     el.textContent = u + '@' + d;
   }
-  // Limpia cualquier span ofuscado por Cloudflare si quedara
   document.querySelectorAll('.__cf_email__').forEach(function(e) {
     var parent = e.closest('a');
     if (parent) {
       parent.href = 'mailto:' + u + '@' + d;
       parent.textContent = u + '@' + d;
     }
+  });
+});
+
+// SMOOTH SCROLL con easing cúbico
+function easeInOutCubic(t) {
+  return t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t+2, 3)/2;
+}
+function smoothScrollTo(targetY, duration) {
+  var startY = window.scrollY;
+  var diff = targetY - startY;
+  var startTime = null;
+  function step(timestamp) {
+    if (!startTime) startTime = timestamp;
+    var elapsed = timestamp - startTime;
+    var progress = Math.min(elapsed / duration, 1);
+    window.scrollTo(0, startY + diff * easeInOutCubic(progress));
+    if (progress < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+function highlightSection(section) {
+  section.style.transition = 'box-shadow 0.4s ease';
+  section.style.boxShadow = '0 0 0 2px rgba(0,255,65,0.2), 0 0 60px rgba(0,255,65,0.05)';
+  setTimeout(function() {
+    section.style.boxShadow = '';
+    setTimeout(function() { section.style.transition = ''; }, 400);
+  }, 900);
+}
+document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+  anchor.addEventListener('click', function(e) {
+    var href = this.getAttribute('href');
+    if (href === '#') return;
+    var target = document.querySelector(href);
+    if (!target) return;
+    e.preventDefault();
+    var nav = document.getElementById('navbar');
+    var navH = nav ? nav.offsetHeight : 65;
+    var targetY = target.getBoundingClientRect().top + window.scrollY - navH - 12;
+    smoothScrollTo(targetY, 900);
+    setTimeout(function() { highlightSection(target); }, 850);
   });
 });
 </script>
