@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GymPro Suplementos | Nutrición deportiva de élite en Argentina</title>
+  <meta name="description" content="GymPro: suplementos deportivos de máxima calidad. Proteínas, creatina, pre-entreno y más. Envío a todo el país."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;900&family=Barlow:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--black:#07080a;--dark:#0d0f12;--card:#141619;--accent:#e8ff00;--accent2:#ff6b00;--text:#f0f0f0;--muted:#888;--border:#222;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--black);color:var(--text);font-family:'Barlow',sans-serif;overflow-x:hidden;}
+    .rotuveloper-badge{position:fixed;bottom:1rem;left:1rem;background:#050a05;color:#00ff41;font-family:monospace;font-size:0.68rem;padding:0.4rem 0.8rem;border-radius:3px;border:1px solid #00ff41;z-index:9999;text-decoration:none;letter-spacing:1px;opacity:0.85;transition:opacity 0.3s;}
+    .rotuveloper-badge:hover{opacity:1;}
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(7,8,10,0.96);backdrop-filter:blur(12px);height:65px;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;border-bottom:1px solid var(--border);}
+    .nav-logo{font-family:'Barlow Condensed',sans-serif;font-size:1.8rem;font-weight:900;color:var(--text);text-decoration:none;letter-spacing:2px;text-transform:uppercase;}
+    .nav-logo span{color:var(--accent);}
+    .nav-links{display:flex;gap:2rem;list-style:none;}
+    .nav-links a{color:var(--muted);text-decoration:none;font-size:0.82rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;transition:color 0.3s;}
+    .nav-links a:hover{color:var(--accent);}
+    .nav-cta{background:var(--accent);color:var(--black)!important;padding:0.5rem 1.2rem;font-weight:700;}
+    #hero{min-height:100vh;position:relative;display:flex;align-items:center;padding:80px 2rem 4rem;overflow:hidden;}
+    .hero-bg{position:absolute;inset:0;}
+    .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center;}
+    .hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(7,8,10,0.97) 50%,rgba(7,8,10,0.7));}
+    .hero-inner{position:relative;z-index:1;max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+    .hero-tag{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(232,255,0,0.1);border:1px solid rgba(232,255,0,0.3);color:var(--accent);font-size:0.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:0.4rem 1rem;margin-bottom:1.5rem;}
+    h1.hero-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(3.5rem,6vw,6rem);font-weight:900;text-transform:uppercase;line-height:0.95;margin-bottom:1.5rem;}
+    h1.hero-title span{color:var(--accent);display:block;}
+    .hero-desc{color:var(--muted);font-size:1.05rem;line-height:1.7;margin-bottom:2.5rem;max-width:450px;}
+    .btn-yellow{display:inline-flex;align-items:center;gap:0.6rem;background:var(--accent);color:var(--black);padding:1rem 2.2rem;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.05rem;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:all 0.3s;}
+    .btn-yellow:hover{background:#fff;transform:translateY(-2px);}
+    .btn-border{display:inline-flex;align-items:center;gap:0.6rem;background:transparent;color:var(--text);padding:1rem 2.2rem;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.05rem;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border:2px solid var(--border);transition:all 0.3s;}
+    .btn-border:hover{border-color:var(--accent);color:var(--accent);}
+    .hero-img-wrap{position:relative;}
+    .hero-img-wrap img{width:100%;border-radius:4px;display:block;}
+    .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;}
+    .hero-pills{display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap;}
+    .hpill{background:var(--card);border:1px solid var(--border);padding:0.5rem 1rem;font-size:0.72rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--muted);}
+    #productos{padding:6rem 2rem;background:var(--dark);}
+    .section-tag{font-family:'Barlow Condensed',sans-serif;font-size:0.75rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:0.5rem;}
+    h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:900;text-transform:uppercase;line-height:1;color:var(--text);}
+    .products-grid{max-width:1200px;margin:3rem auto 0;display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;}
+    .prod-card{background:var(--card);border:1px solid var(--border);overflow:hidden;transition:all 0.3s;position:relative;}
+    .prod-card:hover{border-color:rgba(232,255,0,0.3);transform:translateY(-4px);}
+    .prod-badge{position:absolute;top:0.8rem;right:0.8rem;background:var(--accent2);color:#fff;font-size:0.62rem;font-weight:700;padding:0.2rem 0.6rem;letter-spacing:1px;text-transform:uppercase;z-index:1;}
+    .prod-img{height:200px;overflow:hidden;}
+    .prod-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s;}
+    .prod-card:hover .prod-img img{transform:scale(1.06);}
+    .prod-body{padding:1.2rem;}
+    .prod-cat{font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:0.3rem;}
+    .prod-card h3{font-family:'Barlow Condensed',sans-serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;margin-bottom:0.3rem;}
+    .prod-card p{font-size:0.78rem;color:var(--muted);line-height:1.5;margin-bottom:1rem;}
+    .prod-price{font-family:'Barlow Condensed',sans-serif;font-size:1.5rem;font-weight:900;color:var(--accent);}
+    .prod-price small{font-size:0.8rem;color:var(--muted);font-family:'Barlow',sans-serif;}
+    #por-que{padding:6rem 2rem;background:var(--black);}
+    .why-grid{max-width:1200px;margin:3rem auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:0;}
+    .why-card{padding:2.5rem 2rem;border-top:3px solid var(--accent);border-right:1px solid var(--border);}
+    .why-card:last-child{border-right:none;}
+    .why-num{font-family:'Barlow Condensed',sans-serif;font-size:3rem;font-weight:900;color:rgba(232,255,0,0.12);line-height:1;margin-bottom:0.5rem;}
+    .why-card h3{font-family:'Barlow Condensed',sans-serif;font-size:1.3rem;font-weight:900;text-transform:uppercase;margin-bottom:0.8rem;}
+    .why-card p{color:var(--muted);font-size:0.88rem;line-height:1.7;}
+    .promo-banner{background:var(--accent);padding:4rem 2rem;text-align:center;}
+    .promo-banner h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2rem,5vw,4rem);font-weight:900;color:var(--black);text-transform:uppercase;}
+    .promo-banner p{color:rgba(0,0,0,0.55);font-size:1rem;margin-top:0.8rem;margin-bottom:2rem;}
+    .btn-dark{display:inline-flex;align-items:center;gap:0.6rem;background:var(--black);color:var(--accent);padding:1rem 2.5rem;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.05rem;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:all 0.3s;}
+    .btn-dark:hover{background:#222;}
+    #resenas{padding:6rem 2rem;background:var(--dark);}
+    .rev-grid{max-width:1200px;margin:3rem auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+    .rev-card{background:var(--card);border:1px solid var(--border);overflow:hidden;}
+    .rev-photo{height:200px;overflow:hidden;}
+    .rev-photo img{width:100%;height:100%;object-fit:cover;object-position:top;}
+    .rev-body{padding:1.5rem;}
+    .rev-stars{color:var(--accent);font-size:0.85rem;margin-bottom:0.8rem;letter-spacing:3px;}
+    .rev-body blockquote{color:var(--muted);font-size:0.88rem;line-height:1.7;margin-bottom:1.2rem;font-style:italic;}
+    .rev-author{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;text-transform:uppercase;letter-spacing:1px;}
+    .rev-sub{font-size:0.72rem;color:rgba(232,255,0,0.6);text-transform:uppercase;letter-spacing:2px;}
+    #contacto{padding:6rem 2rem;background:var(--black);}
+    .contact-center{max-width:700px;margin:0 auto;text-align:center;}
+    .contact-center p{color:var(--muted);margin-top:1rem;margin-bottom:2.5rem;font-size:1rem;line-height:1.7;}
+    .contact-info-row{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-bottom:2.5rem;}
+    .ci{text-align:center;}
+    .ci-label{font-size:0.68rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);}
+    .ci-val{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.2rem;color:var(--accent);}
+    footer{background:var(--dark);padding:2rem;text-align:center;border-top:1px solid var(--border);}
+    footer p{color:var(--muted);font-size:0.78rem;}
+    footer span{color:var(--accent);}
+    .wa-float{position:fixed;bottom:1.5rem;right:1.5rem;z-index:9000;}
+    .wa-btn-fix{width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.45);text-decoration:none;animation:wapulse 2.5s infinite;}
+    .wa-btn-fix svg{width:30px;height:30px;fill:#fff;}
+    @keyframes wapulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.4);}50%{box-shadow:0 4px 40px rgba(37,211,102,0.7),0 0 0 10px rgba(37,211,102,0.1);}}
+    @media(max-width:1024px){.products-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:768px){.nav-links{display:none;}.hero-inner,.why-grid,.rev-grid{grid-template-columns:1fr;}.why-card{border-right:none;}.hero-img-wrap{display:none;}}
+  </style>
+</head>
+<body>
+<a href="https://rotuveloper.com" class="rotuveloper-badge" target="_blank">Sitio hecho por Rotuveloper</a>
+<nav>
+  <a href="#" class="nav-logo">Gym<span>Pro</span></a>
+  <ul class="nav-links">
+    <li><a href="#productos">Productos</a></li>
+    <li><a href="#por-que">Nosotros</a></li>
+    <li><a href="#resenas">Reseñas</a></li>
+    <li><a href="#contacto" class="nav-cta">Comprar ahora</a></li>
+  </ul>
+</nav>
+<section id="hero">
+  <div class="hero-bg"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600&q=85" alt="Gimnasio GymPro" fetchpriority="high"/></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag">Nutrición de élite · Envío a todo el país</div>
+      <h1 class="hero-title">Rompe tus <span>límites.</span></h1>
+      <p class="hero-desc">Suplementos deportivos de máxima pureza y efectividad. Formulados para atletas que no se conforman con el promedio.</p>
+      <div class="hero-btns">
+        <a href="#productos" class="btn-yellow">Ver productos</a>
+        <a href="#contacto" class="btn-border">Asesoramiento gratis</a>
+      </div>
+      <div class="hero-pills">
+        <div class="hpill">Formulación premium</div>
+        <div class="hpill">Envío en 24/48hs</div>
+        <div class="hpill">Certificados</div>
+      </div>
+    </div>
+    <div class="hero-img-wrap">
+      <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=700&q=80" alt="Atleta GymPro"/>
+    </div>
+  </div>
+</section>
+<section id="productos">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="section-tag">Catálogo</div>
+    <h2>Nuestros productos</h2>
+  </div>
+  <div class="products-grid">
+    <div class="prod-card"><div class="prod-badge">TOP</div><div class="prod-img"><img src="https://images.unsplash.com/photo-1593095948071-474c5cc2989d?w=500&q=80" alt="Whey Pro" loading="lazy"/></div><div class="prod-body"><div class="prod-cat">Proteínas</div><h3>Whey Pro 2kg</h3><p>Proteína de suero aislada, 25g por porción, baja en lactosa.</p><div class="prod-price">$28.000 <small>ARS</small></div></div></div>
+    <div class="prod-card"><div class="prod-img"><img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=500&q=80" alt="Pre-entreno" loading="lazy"/></div><div class="prod-body"><div class="prod-cat">Pre-entreno</div><h3>Nitro Rush 300g</h3><p>Máxima energía y foco. Con cafeína, beta-alanina y óxido nítrico.</p><div class="prod-price">$18.500 <small>ARS</small></div></div></div>
+    <div class="prod-card"><div class="prod-badge">NUEVO</div><div class="prod-img"><img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?w=500&q=80" alt="Creatina" loading="lazy"/></div><div class="prod-body"><div class="prod-cat">Creatina</div><h3>Creatina Monoh. 500g</h3><p>Creatina monohidratada pura. Sin aditivos. Máxima fuerza y recuperación.</p><div class="prod-price">$15.000 <small>ARS</small></div></div></div>
+    <div class="prod-card"><div class="prod-img"><img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=500&q=80" alt="Quemadores" loading="lazy"/></div><div class="prod-body"><div class="prod-cat">Quemadores</div><h3>Thermo Cut 60 caps</h3><p>Quemador termogénico natural. Extracto de té verde y guaraná.</p><div class="prod-price">$12.000 <small>ARS</small></div></div></div>
+    <div class="prod-card"><div class="prod-img"><img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=500&q=80" alt="Protein Bar" loading="lazy"/></div><div class="prod-body"><div class="prod-cat">Proteínas</div><h3>Protein Bar x12</h3><p>Barras proteicas de 20g. Sin azúcar agregada. Varios sabores.</p><div class="prod-price">$9.500 <small>ARS</small></div></div></div>
+
+    <div class="prod-card"><div class="prod-img"><img src="https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?w=500&q=80" alt="Mass Gainer" loading="lazy"/></div><div class="prod-body"><div class="prod-cat">Mass Gainer</div><h3>Mass Pro 3kg</h3><p>Ganador de masa muscular. Carbohidratos complejos y proteína de suero.</p><div class="prod-price">$35.000 <small>ARS</small></div></div></div>
+    <div class="prod-card"><div class="prod-img"><img src="https://images.unsplash.com/photo-1550572017-4fcdbb59cc32?w=500&q=80" alt="Vitaminas" loading="lazy"/></div><div class="prod-body"><div class="prod-cat">Vitaminas</div><h3>Multi-Sport Pack</h3><p>Multivitamínico completo para deportistas. 30 micronutrientes esenciales.</p><div class="prod-price">$8.500 <small>ARS</small></div></div></div>
+  </div>
+  <div style="text-align:center;margin-top:2.5rem;"><a href="#contacto" class="btn-yellow">Ver catálogo completo</a></div>
+</section>
+<section id="por-que">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="section-tag">Por qué elegirnos</div>
+    <h2>La diferencia<br>es real.</h2>
+  </div>
+  <div class="why-grid">
+    <div class="why-card"><div class="why-num">01</div><h3>Calidad certificada</h3><p>Todos nuestros productos pasan controles de pureza y son certificados por laboratorios independientes. Lo que dice la etiqueta, está adentro.</p></div>
+    <div class="why-card"><div class="why-num">02</div><h3>Asesoramiento experto</h3><p>Nuestro equipo de nutricionistas deportivos te ayuda a armar el stack ideal para tus objetivos. Sin cargo, sin presión.</p></div>
+    <div class="why-card"><div class="why-num">03</div><h3>Envíos rápidos</h3><p>Despachos en 24/48hs a todo el país. Seguimiento en tiempo real y empaque seguro para que tu pedido llegue perfecto.</p></div>
+  </div>
+</section>
+<div class="promo-banner">
+  <h2>20% off en tu primer compra</h2>
+  <p>Usá el código GIMNUEVO al comprar por WhatsApp</p>
+  <a href="#contacto" class="btn-dark">Reclamar descuento</a>
+</div>
+<section id="resenas">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="section-tag">Reseñas</div>
+    <h2>Resultados reales</h2>
+  </div>
+  <div class="rev-grid">
+    <div class="rev-card"><div class="rev-photo"><img src="https://images.unsplash.com/photo-1534367610401-9f5ed68180aa?w=500&q=80" alt="Tomás Aguilar" loading="lazy"/></div><div class="rev-body"><div class="rev-stars">★★★★★</div><blockquote>"La Whey Pro es increíble. Se disuelve perfectamente, tiene buen sabor y noté la diferencia en mi recuperación desde la primera semana."</blockquote><div class="rev-author">Tomás Aguilar</div><div class="rev-sub">Powerlifter · Córdoba</div></div></div>
+    <div class="rev-card"><div class="rev-photo"><img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=500&q=80" alt="Valentina Cruz" loading="lazy"/></div><div class="rev-body"><div class="rev-stars">★★★★★</div><blockquote>"El Nitro Rush es el mejor pre-entreno que probé. Sin nerviosismo ni crash. La energía dura todo el entrenamiento."</blockquote><div class="rev-author">Valentina Cruz</div><div class="rev-sub">CrossFit atleta · Rosario</div></div></div>
+    <div class="rev-card"><div class="rev-photo"><img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?w=500&q=80" alt="Lucas Romero" loading="lazy"/></div><div class="rev-body"><div class="rev-stars">★★★★★</div><blockquote>"Rápida atención, precio competitivo y el envío llegó en 2 días. Me ayudaron a armar mi rutina de suplementación según mis objetivos."</blockquote><div class="rev-author">Lucas Romero</div><div class="rev-sub">Bodybuilder amateur · CABA</div></div></div>
+  </div>
+</section>
+<section id="contacto">
+  <div class="contact-center">
+    <div class="section-tag">Contacto</div>
+    <h2>¿Listo para el siguiente nivel?</h2>
+    <p>Escribinos por WhatsApp para asesoramiento personalizado, consultar stock y hacer tu pedido. Respondemos al instante.</p>
+    <div class="contact-info-row">
+      <div class="ci"><div class="ci-label">WhatsApp</div><div class="ci-val">+54 9 11 xxxx-xxxx</div></div>
+      <div class="ci"><div class="ci-label">Envíos</div><div class="ci-val">Todo el país</div></div>
+      <div class="ci"><div class="ci-label">Atención</div><div class="ci-val">Lun–Sáb 9–20hs</div></div>
+    </div>
+    <a href="#" class="btn-yellow">Escribir por WhatsApp</a>
+  </div>
+</section>
+<footer><p>© 2025 <span>GymPro Suplementos</span> · Nutrición deportiva de élite · Sitio web por <span>Rotuveloper</span></p></footer>
+<div class="wa-float"><a href="#" class="wa-btn-fix" aria-label="WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M16 3C9.373 3 4 8.373 4 15c0 2.385.698 4.607 1.902 6.476L4 29l7.745-2.03A11.9 11.9 0 0016 27c6.627 0 12-5.373 12-12S22.627 3 16 3zm5.52 17.41c-.302-.15-1.788-.882-2.065-.982-.277-.1-.479-.15-.68.15-.2.302-.776.983-.952 1.185-.175.2-.35.225-.652.075-.302-.15-1.276-.47-2.43-1.5-.9-.8-1.507-1.787-1.683-2.09-.176-.3-.019-.463.132-.613.136-.135.302-.352.453-.527.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.527-.075-.15-.68-1.638-.932-2.243-.245-.588-.494-.508-.68-.518l-.578-.01c-.2 0-.527.075-.803.375s-1.054 1.03-1.054 2.513 1.08 2.914 1.23 3.115c.15.2 2.124 3.242 5.147 4.545.72.31 1.28.496 1.718.635.722.23 1.38.197 1.9.12.58-.086 1.788-.73 2.04-1.437.253-.706.253-1.312.177-1.437-.075-.125-.277-.2-.578-.35z"/></svg></a></div>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Estudio Jurídico Ferreyra | Abogados en Buenos Aires</title>
+  <meta name="description" content="Estudio Jurídico Ferreyra. Especialistas en derecho civil, laboral y comercial. Más de 15 años protegiendo sus derechos. Consulta sin cargo."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--navy:#0d1b2a;--navy2:#162032;--gold:#b8972a;--gold-light:#d4af44;--cream:#f8f5ef;--gray:#e8e2d8;--text:#2c2c2c;--muted:#7a7a7a;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--cream);color:var(--text);font-family:'Raleway',sans-serif;}
+    .rotuveloper-badge{position:fixed;bottom:1rem;left:1rem;background:#050a05;color:#00ff41;font-family:monospace;font-size:0.68rem;padding:0.4rem 0.8rem;border-radius:3px;border:1px solid #00ff41;z-index:9999;text-decoration:none;letter-spacing:1px;opacity:0.85;transition:opacity 0.3s;}
+    .rotuveloper-badge:hover{opacity:1;}
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(13,27,42,0.97);backdrop-filter:blur(10px);height:70px;display:flex;align-items:center;justify-content:space-between;padding:0 3rem;border-bottom:1px solid rgba(184,151,42,0.3);}
+    .nav-logo{display:flex;align-items:center;gap:0.8rem;text-decoration:none;}
+    .nav-logo-mark{width:36px;height:36px;border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;}
+    .nav-logo-mark svg{width:18px;height:18px;fill:var(--gold);}
+    .nav-logo-text{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:#fff;letter-spacing:2px;font-weight:600;}
+    .nav-logo-text span{color:var(--gold);}
+    .nav-links{display:flex;gap:2.5rem;list-style:none;}
+    .nav-links a{color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.78rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;transition:color 0.3s;}
+    .nav-links a:hover{color:var(--gold);}
+    .nav-cta{border:1px solid var(--gold);color:var(--gold)!important;padding:0.5rem 1.2rem;}
+    #hero{min-height:100vh;position:relative;display:flex;align-items:center;padding:80px 3rem 4rem;overflow:hidden;}
+    .hero-bg{position:absolute;inset:0;}
+    .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:right center;}
+    .hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(13,27,42,0.97) 50%,rgba(13,27,42,0.6));}
+    .hero-inner{position:relative;z-index:1;max-width:1200px;margin:0 auto;width:100%;}
+    .hero-rule{width:50px;height:2px;background:var(--gold);margin-bottom:1.5rem;}
+    .hero-eyebrow{font-size:0.72rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;font-weight:600;}
+    #hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,5vw,4.5rem);color:#fff;line-height:1.1;max-width:650px;margin-bottom:1.5rem;font-weight:700;}
+    #hero p{color:rgba(255,255,255,0.6);font-size:1rem;line-height:1.8;max-width:500px;margin-bottom:2.5rem;}
+    .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;}
+    .btn-gold{display:inline-flex;align-items:center;gap:0.5rem;background:var(--gold);color:var(--navy);padding:0.9rem 2rem;font-weight:700;font-size:0.82rem;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;transition:all 0.3s;}
+    .btn-gold:hover{background:var(--gold-light);}
+    .btn-ghost-w{display:inline-flex;align-items:center;gap:0.5rem;background:transparent;color:#fff;padding:0.9rem 2rem;font-weight:700;font-size:0.82rem;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;border:1px solid rgba(255,255,255,0.3);transition:all 0.3s;}
+    .btn-ghost-w:hover{border-color:var(--gold);color:var(--gold);}
+    .stats-bar{background:var(--navy2);padding:3rem;border-top:1px solid rgba(184,151,42,0.2);border-bottom:1px solid rgba(184,151,42,0.2);}
+    .stats-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:center;}
+    .stat-num{font-family:'Cormorant Garamond',serif;font-size:3rem;color:var(--gold);font-weight:700;line-height:1;}
+    .stat-label{font-size:0.72rem;color:rgba(255,255,255,0.4);letter-spacing:2px;text-transform:uppercase;margin-top:0.4rem;}
+    #areas{padding:7rem 3rem;background:var(--cream);}
+    .section-eyebrow{font-size:0.72rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-weight:600;display:flex;align-items:center;gap:1rem;margin-bottom:0.8rem;}
+    .section-eyebrow::before{content:'';width:30px;height:1px;background:var(--gold);}
+    h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);line-height:1.1;color:var(--navy);}
+    .areas-grid{max-width:1100px;margin:3rem auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+    .area-card{border:1px solid var(--gray);padding:2.5rem 2rem;transition:all 0.3s;position:relative;overflow:hidden;}
+    .area-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold);transform:scaleY(0);transition:transform 0.3s;transform-origin:bottom;}
+    .area-card:hover{border-color:var(--gold);box-shadow:0 10px 40px rgba(0,0,0,0.08);}
+    .area-card:hover::before{transform:scaleY(1);}
+    .area-img{height:160px;overflow:hidden;margin-bottom:1.5rem;border-radius:3px;}
+    .area-img img{width:100%;height:100%;object-fit:cover;}
+    .area-card h3{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--navy);margin-bottom:0.8rem;}
+    .area-card p{color:var(--muted);font-size:0.88rem;line-height:1.7;}
+    #equipo{padding:7rem 3rem;background:var(--navy);}
+    #equipo .section-eyebrow{color:var(--gold);}
+    #equipo h2{color:#fff;}
+    .team-grid{max-width:1100px;margin:3rem auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;}
+    .team-card{text-align:center;}
+    .team-photo{width:150px;height:150px;border-radius:50%;overflow:hidden;border:3px solid var(--gold);margin:0 auto 1.5rem;}
+    .team-photo img{width:100%;height:100%;object-fit:cover;}
+    .team-card h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:#fff;margin-bottom:0.3rem;}
+    .team-card .role{font-size:0.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;}
+    .team-card p{color:rgba(255,255,255,0.45);font-size:0.82rem;line-height:1.7;}
+    #proceso{padding:7rem 3rem;background:var(--cream);}
+    .process-steps{max-width:900px;margin:3rem auto 0;}
+    .step{display:grid;grid-template-columns:80px 1fr;gap:2rem;padding:2rem 0;border-bottom:1px solid var(--gray);}
+    .step:last-child{border-bottom:none;}
+    .step-num{font-family:'Cormorant Garamond',serif;font-size:3rem;color:var(--gold);font-weight:700;opacity:0.4;line-height:1;}
+    .step h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--navy);margin-bottom:0.5rem;}
+    .step p{color:var(--muted);font-size:0.88rem;line-height:1.7;}
+    #contacto{padding:7rem 3rem;background:var(--navy);}
+    .contact-inner{max-width:900px;margin:3rem auto 0;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+    #contacto .section-eyebrow{color:var(--gold);}
+    #contacto h2{color:#fff;margin-bottom:1rem;}
+    #contacto > .contact-intro{color:rgba(255,255,255,0.5);line-height:1.8;margin-bottom:2rem;font-size:0.92rem;max-width:900px;margin-left:auto;margin-right:auto;}
+    .contact-details{display:flex;flex-direction:column;gap:1.2rem;}
+    .cd{display:flex;gap:1rem;align-items:flex-start;}
+    .cd-icon{width:38px;height:38px;border:1px solid rgba(184,151,42,0.4);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .cd-icon svg{width:16px;height:16px;fill:var(--gold);}
+    .cd-label{font-size:0.68rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:0.2rem;}
+    .cd-val{color:rgba(255,255,255,0.75);font-size:0.9rem;}
+    .contact-form{background:rgba(255,255,255,0.04);border:1px solid rgba(184,151,42,0.2);padding:2.5rem;}
+    .form-group{margin-bottom:1.2rem;}
+    .form-group label{display:block;font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;}
+    .form-group input,.form-group textarea,.form-group select{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);padding:0.8rem 1rem;color:#fff;font-family:'Raleway',sans-serif;font-size:0.85rem;outline:none;transition:border-color 0.3s;}
+    .form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--gold);}
+    .form-group textarea{min-height:100px;resize:vertical;}
+    .form-group select option{background:var(--navy);}
+    footer{background:#080e16;padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(184,151,42,0.1);flex-wrap:wrap;gap:1rem;}
+    footer p{color:rgba(255,255,255,0.25);font-size:0.78rem;}
+    footer span{color:var(--gold);}
+    .wa-float{position:fixed;bottom:1.5rem;right:1.5rem;z-index:9000;}
+    .wa-btn-fix{width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.45);text-decoration:none;animation:wapulse 2.5s infinite;}
+    .wa-btn-fix svg{width:30px;height:30px;fill:#fff;}
+    @keyframes wapulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.4);}50%{box-shadow:0 4px 40px rgba(37,211,102,0.7),0 0 0 10px rgba(37,211,102,0.1);}}
+    @media(max-width:768px){.nav-links{display:none;}.stats-inner,.areas-grid,.team-grid,.contact-inner{grid-template-columns:1fr;}.step{grid-template-columns:1fr;gap:0.5rem;}footer{flex-direction:column;text-align:center;}}
+  </style>
+</head>
+<body>
+<a href="https://rotuveloper.com" class="rotuveloper-badge" target="_blank">Sitio hecho por Rotuveloper</a>
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-mark"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg></div>
+    <div class="nav-logo-text">Estudio <span>Ferreyra</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#areas">Áreas</a></li>
+    <li><a href="#equipo">Equipo</a></li>
+    <li><a href="#proceso">Proceso</a></li>
+    <li><a href="#contacto" class="nav-cta">Consulta gratuita</a></li>
+  </ul>
+</nav>
+<section id="hero">
+  <div class="hero-bg"><img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1600&q=85" alt="Estudio jurídico profesional" fetchpriority="high"/></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <div class="hero-rule"></div>
+    <div class="hero-eyebrow">Estudio Jurídico · Buenos Aires · Desde 2008</div>
+    <h1>Protegemos sus derechos con experiencia y dedicación.</h1>
+    <p>Más de 15 años representando a personas y empresas en las áreas del derecho civil, laboral y comercial. Primera consulta sin cargo.</p>
+    <div class="hero-btns">
+      <a href="#contacto" class="btn-gold">Consulta sin cargo</a>
+      <a href="#areas" class="btn-ghost-w">Nuestras áreas</a>
+    </div>
+  </div>
+</section>
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div><div class="stat-num">15+</div><div class="stat-label">Años de trayectoria</div></div>
+    <div><div class="stat-num">800+</div><div class="stat-label">Casos resueltos</div></div>
+    <div><div class="stat-num">3</div><div class="stat-label">Especialidades</div></div>
+    <div><div class="stat-num">98%</div><div class="stat-label">Clientes satisfechos</div></div>
+  </div>
+</div>
+<section id="areas">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div class="section-eyebrow">Especialidades</div>
+    <h2>Áreas de práctica</h2>
+    <p style="color:var(--muted);margin-top:1rem;max-width:550px;line-height:1.8;">Cubrimos las principales ramas del derecho con equipos especializados en cada área para brindar la mejor representación posible.</p>
+  </div>
+  <div class="areas-grid">
+    <div class="area-card"><div class="area-img"><img src="https://images.unsplash.com/photo-1479142506502-19b3a3b7ff33?w=600&q=80" alt="Derecho Civil" loading="lazy"/></div><h3>Derecho Civil</h3><p>Contratos, sucesiones, daños y perjuicios, propiedad horizontal y derecho de familia. Asesoramos en todas las etapas.</p></div>
+    <div class="area-card"><div class="area-img"><img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&q=80" alt="Derecho Laboral" loading="lazy"/></div><h3>Derecho Laboral</h3><p>Despidos sin causa, accidentes laborales, enfermedades profesionales y conflictos con empleadores.</p></div>
+    <div class="area-card"><div class="area-img"><img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80" alt="Derecho Comercial" loading="lazy"/></div><h3>Derecho Comercial</h3><p>Contratos mercantiles, conflictos societarios, concursos y quiebras. Asesoramiento integral para su empresa.</p></div>
+    <div class="area-card"><div class="area-img"><img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&q=80" alt="Defensa del Consumidor" loading="lazy"/></div><h3>Defensa del Consumidor</h3><p>Reclamaciones contra empresas, servicios deficientes y fraudes. Hacemos valer sus derechos como consumidor.</p></div>
+    <div class="area-card"><div class="area-img"><img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80" alt="Derecho Inmobiliario" loading="lazy"/></div><h3>Derecho Inmobiliario</h3><p>Compraventa de propiedades, locaciones, usucapión y conflictos entre vecinos. Protegemos su patrimonio.</p></div>
+    <div class="area-card"><div class="area-img"><img src="https://images.unsplash.com/photo-1536104968055-4d61aa56f46a?w=600&q=80" alt="Derecho de Familia" loading="lazy"/></div><h3>Derecho de Familia</h3><p>Divorcios, alimentos, guarda y adopciones. Manejamos estos procesos con la sensibilidad que merecen.</p></div>
+  </div>
+</section>
+<section id="equipo">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div class="section-eyebrow">Nuestros profesionales</div>
+    <h2>El equipo Ferreyra</h2>
+  </div>
+  <div class="team-grid">
+    <div class="team-card"><div class="team-photo"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&q=80" alt="Dr. Martín Ferreyra" loading="lazy"/></div><h3>Dr. Martín Ferreyra</h3><div class="role">Socio fundador · Derecho Civil</div><p>Abogado UBA, especialista en contratos y sucesiones. 20 años de trayectoria en el foro porteño.</p></div>
+    <div class="team-card"><div class="team-photo"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&q=80" alt="Dra. Carolina Sosa" loading="lazy"/></div><h3>Dra. Carolina Sosa</h3><div class="role">Socia · Derecho Laboral</div><p>Especialista en accidentes laborales y despidos. Máster en Derecho del Trabajo, UBA.</p></div>
+    <div class="team-card"><div class="team-photo"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&q=80" alt="Dr. Pablo Acosta" loading="lazy"/></div><h3>Dr. Pablo Acosta</h3><div class="role">Asociado · Derecho Comercial</div><p>Experto en derecho societario y concursos. Asesor de pymes y startups desde 2015.</p></div>
+  </div>
+</section>
+<section id="proceso">
+  <div style="max-width:900px;margin:0 auto;">
+    <div class="section-eyebrow">Cómo trabajamos</div>
+    <h2>Un proceso claro y transparente</h2>
+  </div>
+  <div class="process-steps">
+    <div class="step"><div class="step-num">01</div><div><h3>Consulta inicial gratuita</h3><p>Evaluamos su caso sin cargo para determinar la mejor estrategia legal disponible.</p></div></div>
+    <div class="step"><div class="step-num">02</div><div><h3>Análisis y estrategia</h3><p>Preparamos un informe detallado con las opciones legales y los pasos a seguir.</p></div></div>
+    <div class="step"><div class="step-num">03</div><div><h3>Representación activa</h3><p>Actuamos en su nombre en todas las instancias judiciales o extrajudiciales necesarias.</p></div></div>
+    <div class="step"><div class="step-num">04</div><div><h3>Seguimiento continuo</h3><p>Lo mantenemos informado en todo momento sobre el estado de su caso.</p></div></div>
+  </div>
+</section>
+<section id="contacto">
+  <div style="max-width:900px;margin:0 auto;">
+    <div class="section-eyebrow">Contacto</div>
+    <h2>Primera consulta sin cargo</h2>
+  </div>
+  <div class="contact-inner">
+    <div>
+      <p style="color:rgba(255,255,255,0.5);line-height:1.8;margin-bottom:2rem;font-size:0.92rem;">No enfrente sus problemas legales solo. Contáctenos hoy y un profesional evaluará su caso de manera confidencial y gratuita.</p>
+      <div class="contact-details">
+        <div class="cd"><div class="cd-icon"><svg viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.12-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg></div><div><div class="cd-label">Teléfono</div><div class="cd-val">+54 11 4xxx-xxxx</div></div></div>
+        <div class="cd"><div class="cd-icon"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div><div><div class="cd-label">Email</div><div class="cd-val">consultas@ferreyraabogados.com</div></div></div>
+        <div class="cd"><div class="cd-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div><div><div class="cd-label">Dirección</div><div class="cd-val">Av. Corrientes 1500, Piso 8, CABA</div></div></div>
+        <div class="cd"><div class="cd-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg></div><div><div class="cd-label">Atención</div><div class="cd-val">Lun–Vie 9:00–18:00 hs</div></div></div>
+      </div>
+    </div>
+    <div class="contact-form">
+      <div class="form-group"><label>Nombre completo</label><input type="text" placeholder="Dr./Sra./Sr."/></div>
+      <div class="form-group"><label>Teléfono de contacto</label><input type="text" placeholder="+54 11 xxxx-xxxx"/></div>
+      <div class="form-group"><label>Área de consulta</label><select><option value="">— Seleccione —</option><option>Derecho Civil</option><option>Derecho Laboral</option><option>Derecho Comercial</option><option>Defensa del Consumidor</option><option>Otro</option></select></div>
+      <div class="form-group"><label>Descripción del caso</label><textarea placeholder="Describa brevemente su situación..."></textarea></div>
+      <a href="#" class="btn-gold" style="display:block;text-align:center;">Solicitar consulta gratuita</a>
+    </div>
+  </div>
+</section>
+<footer>
+  <p>© 2025 <span>Estudio Jurídico Ferreyra</span> — Todos los derechos reservados</p>
+  <p>Sitio web desarrollado por <span>Rotuveloper</span></p>
+</footer>
+<div class="wa-float"><a href="#" class="wa-btn-fix" aria-label="WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M16 3C9.373 3 4 8.373 4 15c0 2.385.698 4.607 1.902 6.476L4 29l7.745-2.03A11.9 11.9 0 0016 27c6.627 0 12-5.373 12-12S22.627 3 16 3zm5.52 17.41c-.302-.15-1.788-.882-2.065-.982-.277-.1-.479-.15-.68.15-.2.302-.776.983-.952 1.185-.175.2-.35.225-.652.075-.302-.15-1.276-.47-2.43-1.5-.9-.8-1.507-1.787-1.683-2.09-.176-.3-.019-.463.132-.613.136-.135.302-.352.453-.527.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.527-.075-.15-.68-1.638-.932-2.243-.245-.588-.494-.508-.68-.518l-.578-.01c-.2 0-.527.075-.803.375s-1.054 1.03-1.054 2.513 1.08 2.914 1.23 3.115c.15.2 2.124 3.242 5.147 4.545.72.31 1.28.496 1.718.635.722.23 1.38.197 1.9.12.58-.086 1.788-.73 2.04-1.437.253-.706.253-1.312.177-1.437-.075-.125-.277-.2-.578-.35z"/></svg></a></div>
+</body>
+</html>

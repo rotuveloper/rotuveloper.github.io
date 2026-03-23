@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Centro Spa Serenidad | Bienestar y Relajación en Buenos Aires</title>
+  <meta name="description" content="Spa Serenidad: masajes, tratamientos faciales y corporales. Reserva tu turno online. Un oasis de paz en Buenos Aires."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--dark:#1a1510;--brown:#3d2b1f;--cream:#fdf8f4;--sage:#7a9e7e;--gold:#c9a96e;--text:#2d2420;--muted:#8a7570;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--cream);color:var(--text);font-family:'Jost',sans-serif;}
+    .rotuveloper-badge{position:fixed;bottom:1rem;left:1rem;background:#050a05;color:#00ff41;font-family:monospace;font-size:0.68rem;padding:0.4rem 0.8rem;border-radius:3px;border:1px solid #00ff41;z-index:9999;text-decoration:none;letter-spacing:1px;opacity:0.85;transition:opacity 0.3s;}
+    .rotuveloper-badge:hover{opacity:1;}
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(26,21,16,0.94);backdrop-filter:blur(20px);height:70px;display:flex;align-items:center;justify-content:space-between;padding:0 3rem;}
+    .nav-logo{font-family:'Cormorant',serif;font-size:1.6rem;font-style:italic;color:#fff;text-decoration:none;letter-spacing:1px;}
+    .nav-logo span{color:var(--gold);}
+    .nav-links{display:flex;gap:2.5rem;list-style:none;}
+    .nav-links a{color:rgba(255,255,255,0.55);text-decoration:none;font-size:0.78rem;font-weight:500;letter-spacing:2px;text-transform:uppercase;transition:color 0.3s;}
+    .nav-links a:hover{color:var(--gold);}
+    .nav-cta{border:1px solid var(--gold);color:var(--gold)!important;padding:0.5rem 1.2rem;}
+    #hero{min-height:100vh;position:relative;display:flex;align-items:center;padding:80px 3rem 4rem;}
+    .hero-bg{position:absolute;inset:0;}
+    .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 30%;}
+    .hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(26,21,16,0.82) 50%,rgba(26,21,16,0.4));}
+    .hero-inner{position:relative;z-index:1;max-width:650px;}
+    .hero-subtitle{font-family:'Cormorant',serif;font-style:italic;font-size:1.1rem;color:var(--gold);letter-spacing:3px;margin-bottom:1.2rem;}
+    #hero h1{font-family:'Cormorant',serif;font-size:clamp(3rem,6vw,5.5rem);color:#fff;line-height:1.05;margin-bottom:1.5rem;font-weight:600;}
+    #hero p{color:rgba(255,255,255,0.65);font-size:1rem;line-height:1.9;max-width:480px;margin-bottom:2.5rem;}
+    .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;}
+    .btn-gold{display:inline-flex;align-items:center;gap:0.6rem;background:var(--gold);color:var(--dark);padding:0.9rem 2.2rem;font-weight:600;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:all 0.3s;}
+    .btn-gold:hover{background:var(--cream);transform:translateY(-2px);}
+    .btn-ghost-g{display:inline-flex;align-items:center;gap:0.6rem;background:transparent;color:#fff;padding:0.9rem 2.2rem;font-weight:600;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border:1px solid rgba(255,255,255,0.3);transition:all 0.3s;}
+    .btn-ghost-g:hover{border-color:var(--gold);color:var(--gold);}
+    #tratamientos{padding:8rem 3rem;background:var(--cream);}
+    .section-center{text-align:center;margin-bottom:4rem;}
+    .section-tag{font-family:'Cormorant',serif;font-style:italic;font-size:1rem;color:var(--gold);letter-spacing:2px;margin-bottom:0.5rem;}
+    h2{font-family:'Cormorant',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:600;line-height:1.1;color:var(--text);}
+    .treat-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+    .treat-card{background:#fff;overflow:hidden;border:1px solid rgba(201,169,110,0.15);transition:all 0.4s;}
+    .treat-card:hover{border-color:rgba(201,169,110,0.5);box-shadow:0 15px 50px rgba(0,0,0,0.08);transform:translateY(-4px);}
+    .treat-img{height:200px;overflow:hidden;}
+    .treat-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s;}
+    .treat-card:hover .treat-img img{transform:scale(1.05);}
+    .treat-body{padding:1.8rem;}
+    .treat-card h3{font-family:'Cormorant',serif;font-size:1.5rem;color:var(--text);margin-bottom:0.8rem;font-weight:600;}
+    .treat-card p{color:var(--muted);font-size:0.88rem;line-height:1.8;margin-bottom:1.2rem;}
+    .treat-price{font-family:'Cormorant',serif;font-size:1.3rem;color:var(--gold);}
+    .treat-duration{font-size:0.72rem;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-top:0.2rem;}
+    #experiencia{padding:8rem 3rem;background:var(--dark);}
+    .exp-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+    .exp-img{position:relative;}
+    .exp-img img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;}
+    .exp-img::before{content:'';position:absolute;top:-15px;left:-15px;right:15px;bottom:15px;border:1px solid rgba(201,169,110,0.3);z-index:-1;}
+    .exp-text .section-tag{display:block;text-align:left;margin-bottom:0.5rem;}
+    #experiencia h2{color:#fff;margin-bottom:1.5rem;}
+    .exp-text p{color:rgba(255,255,255,0.5);line-height:1.9;margin-bottom:1rem;font-size:0.95rem;}
+    .exp-features{display:flex;flex-direction:column;gap:0.8rem;margin-top:1.5rem;}
+    .ef{display:flex;align-items:flex-start;gap:0.8rem;color:rgba(255,255,255,0.65);font-size:0.88rem;}
+    .ef-dot{width:4px;height:4px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:0.5rem;}
+    #reservas{padding:8rem 3rem;background:var(--cream);}
+    .booking-grid{max-width:1100px;margin:3rem auto 0;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+    .booking-info h3{font-family:'Cormorant',serif;font-size:1.8rem;margin-bottom:1rem;}
+    .booking-info p{color:var(--muted);line-height:1.8;margin-bottom:2rem;font-size:0.92rem;}
+    .booking-details{display:flex;flex-direction:column;gap:1rem;}
+    .bd{display:flex;align-items:flex-start;gap:1rem;}
+    .bd-line{width:1px;height:40px;background:rgba(201,169,110,0.4);flex-shrink:0;margin-top:4px;}
+    .bd-label{font-size:0.68rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:0.2rem;}
+    .bd-val{color:var(--text);font-size:0.88rem;}
+    .booking-form{background:#fff;padding:3rem;box-shadow:0 20px 60px rgba(0,0,0,0.08);}
+    .form-group{margin-bottom:1.2rem;}
+    .form-group label{display:block;font-size:0.68rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;}
+    .form-group input,.form-group textarea,.form-group select{width:100%;background:var(--cream);border:1px solid rgba(201,169,110,0.3);padding:0.8rem 1rem;color:var(--text);font-family:'Jost',sans-serif;font-size:0.85rem;outline:none;transition:border-color 0.3s;}
+    .form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--gold);}
+    .form-group textarea{min-height:80px;resize:vertical;}
+    #resenas{padding:8rem 3rem;background:var(--dark);}
+    #resenas h2{color:#fff;}
+    .rev-grid{max-width:1100px;margin:3rem auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;}
+    .rev-card{display:flex;flex-direction:column;gap:1.5rem;}
+    .rev-photo{height:260px;overflow:hidden;}
+    .rev-photo img{width:100%;height:100%;object-fit:cover;object-position:top;}
+    .rev-body{border-top:1px solid rgba(201,169,110,0.3);padding-top:1.5rem;}
+    .rev-stars{color:var(--gold);font-size:0.85rem;letter-spacing:3px;margin-bottom:1rem;}
+    .rev-body blockquote{color:rgba(255,255,255,0.5);font-style:italic;font-family:'Cormorant',serif;font-size:1.05rem;line-height:1.7;margin-bottom:1rem;}
+    .rev-name{font-size:0.78rem;color:var(--gold);letter-spacing:2px;text-transform:uppercase;}
+    footer{background:#100d09;padding:3rem;text-align:center;border-top:1px solid rgba(201,169,110,0.1);}
+    footer p{color:rgba(255,255,255,0.2);font-size:0.78rem;}
+    footer span{color:var(--gold);}
+    .wa-float{position:fixed;bottom:1.5rem;right:1.5rem;z-index:9000;}
+    .wa-btn-fix{width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.45);text-decoration:none;animation:wapulse 2.5s infinite;}
+    .wa-btn-fix svg{width:30px;height:30px;fill:#fff;}
+    @keyframes wapulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.4);}50%{box-shadow:0 4px 40px rgba(37,211,102,0.7),0 0 0 10px rgba(37,211,102,0.1);}}
+    @media(max-width:768px){.nav-links{display:none;}.treat-grid,.exp-grid,.booking-grid,.rev-grid{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+<a href="https://rotuveloper.com" class="rotuveloper-badge" target="_blank">Sitio hecho por Rotuveloper</a>
+<nav>
+  <a href="#" class="nav-logo">Spa <span>Serenidad</span></a>
+  <ul class="nav-links">
+    <li><a href="#tratamientos">Tratamientos</a></li>
+    <li><a href="#experiencia">Nosotros</a></li>
+    <li><a href="#resenas">Reseñas</a></li>
+    <li><a href="#reservas" class="nav-cta">Reservar turno</a></li>
+  </ul>
+</nav>
+<section id="hero">
+  <div class="hero-bg"><img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1600&q=85" alt="Spa Serenidad Buenos Aires" fetchpriority="high"/></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <div class="hero-subtitle">Centro de Bienestar</div>
+    <h1>Un oasis de paz en el corazón de la ciudad.</h1>
+    <p>Desconectate del mundo y encontrá el equilibrio que necesitás. Tratamientos personalizados que renuevan cuerpo, mente y espíritu.</p>
+    <div class="hero-btns">
+      <a href="#reservas" class="btn-gold">Reservar turno</a>
+      <a href="#tratamientos" class="btn-ghost-g">Ver tratamientos</a>
+    </div>
+  </div>
+</section>
+<section id="tratamientos">
+  <div class="section-center">
+    <div class="section-tag">Nuestros tratamientos</div>
+    <h2>Rituales de bienestar<br>diseñados para vos</h2>
+  </div>
+  <div class="treat-grid">
+    <div class="treat-card"><div class="treat-img"><img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=600&q=80" alt="Masaje Relajante" loading="lazy"/></div><div class="treat-body"><h3>Masaje Relajante</h3><p>Técnica sueca clásica que libera tensiones musculares y activa la circulación. El refugio perfecto del estrés cotidiano.</p><div class="treat-price">desde $8.500</div><div class="treat-duration">60 o 90 minutos</div></div></div>
+    <div class="treat-card"><div class="treat-img"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80" alt="Ritual Facial" loading="lazy"/></div><div class="treat-body"><h3>Ritual Facial</h3><p>Limpieza profunda, hidratación y tratamiento personalizado según tu tipo de piel. Radiante desde la primera sesión.</p><div class="treat-price">desde $7.200</div><div class="treat-duration">75 minutos</div></div></div>
+    <div class="treat-card"><div class="treat-img"><img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80" alt="Aromaterapia" loading="lazy"/></div><div class="treat-body"><h3>Aromaterapia</h3><p>Masaje con aceites esenciales seleccionados para armonizar el sistema nervioso y aliviar la ansiedad y el insomnio.</p><div class="treat-price">desde $9.500</div><div class="treat-duration">90 minutos</div></div></div>
+    <div class="treat-card"><div class="treat-img"><img src="https://images.unsplash.com/photo-1552693673-1bf958298935?w=600&q=80" alt="Piedras Calientes" loading="lazy"/></div><div class="treat-body"><h3>Piedras Calientes</h3><p>Basalto volcánico a temperatura terapéutica. Profunda relajación muscular y liberación de toxinas.</p><div class="treat-price">desde $11.000</div><div class="treat-duration">90 minutos</div></div></div>
+    <div class="treat-card"><div class="treat-img"><img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=600&q=80" alt="Hidratación Corporal" loading="lazy"/></div><div class="treat-body"><h3>Hidratación Corporal</h3><p>Exfoliación y envoltura nutritiva con productos naturales. Piel suave y renovada que brilla con luz propia.</p><div class="treat-price">desde $9.000</div><div class="treat-duration">80 minutos</div></div></div>
+    <div class="treat-card"><div class="treat-img"><img src="https://images.unsplash.com/photo-1540317580384-e5d43616b9aa?w=600&q=80" alt="Ritual en Pareja" loading="lazy"/></div><div class="treat-body"><h3>Ritual en Pareja</h3><p>El regalo perfecto. Sesión simultánea para dos personas con masaje, facial exprés y brindis de bienvenida.</p><div class="treat-price">desde $19.000</div><div class="treat-duration">90 minutos</div></div></div>
+  </div>
+</section>
+<section id="experiencia">
+  <div class="exp-grid">
+    <div class="exp-img"><img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=800&q=80" alt="Experiencia Spa Serenidad" loading="lazy"/></div>
+    <div class="exp-text">
+      <span class="section-tag">Nuestra filosofía</span>
+      <h2>Más que un spa, una experiencia transformadora.</h2>
+      <p>En Serenidad creemos que el cuidado personal no es un lujo, es una necesidad. Cada visita es un ritual diseñado para que salgas sintiéndote renovada.</p>
+      <p>Nuestros terapeutas están certificados en técnicas nacionales e internacionales, y usamos únicamente productos naturales de primera calidad.</p>
+      <div class="exp-features">
+        <div class="ef"><div class="ef-dot"></div>Más de 8 años de experiencia</div>
+        <div class="ef"><div class="ef-dot"></div>Productos 100% naturales y veganos</div>
+        <div class="ef"><div class="ef-dot"></div>Terapeutas certificados internacionalmente</div>
+        <div class="ef"><div class="ef-dot"></div>Ambiente privado y acogedor</div>
+        <div class="ef"><div class="ef-dot"></div>Turnos exclusivos, sin masificación</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="reservas">
+  <div style="text-align:center;margin-bottom:1rem;">
+    <div class="section-tag">Reservas</div>
+    <h2>Reservá tu momento de paz</h2>
+  </div>
+  <div class="booking-grid">
+    <div class="booking-info">
+      <h3>¿Cómo funciona?</h3>
+      <p>Elegí el tratamiento que querés, completá el formulario o escribinos por WhatsApp. Confirmamos tu turno en menos de 2 horas.</p>
+      <div class="booking-details">
+        <div class="bd"><div class="bd-line"></div><div><div class="bd-label">Dirección</div><div class="bd-val">Av. del Libertador 2345, Martínez, GBA</div></div></div>
+        <div class="bd"><div class="bd-line"></div><div><div class="bd-label">WhatsApp</div><div class="bd-val">+54 9 11 xxxx-xxxx</div></div></div>
+        <div class="bd"><div class="bd-line"></div><div><div class="bd-label">Horarios</div><div class="bd-val">Mar–Sáb 10:00–20:00 · Dom 10:00–16:00</div></div></div>
+        <div class="bd"><div class="bd-line"></div><div><div class="bd-label">Formas de pago</div><div class="bd-val">Efectivo · Transferencia · MercadoPago</div></div></div>
+      </div>
+    </div>
+    <div class="booking-form">
+      <div class="form-group"><label>Tu nombre</label><input type="text" placeholder="¿Cómo te llamás?"/></div>
+      <div class="form-group"><label>WhatsApp o email</label><input type="text" placeholder="Para confirmar tu turno"/></div>
+      <div class="form-group"><label>Tratamiento</label><select><option value="">— Elegí un servicio —</option><option>Masaje Relajante 60min</option><option>Masaje Relajante 90min</option><option>Ritual Facial</option><option>Aromaterapia</option><option>Piedras Calientes</option><option>Ritual en Pareja</option></select></div>
+      <div class="form-group"><label>Fecha preferida</label><input type="date"/></div>
+      <div class="form-group"><label>Nota adicional</label><textarea placeholder="¿Alguna preferencia o condición de salud que debamos saber?"></textarea></div>
+      <a href="#" class="btn-gold" style="display:block;text-align:center;">Solicitar turno</a>
+    </div>
+  </div>
+</section>
+<section id="resenas">
+  <div style="max-width:1100px;margin:0 auto;text-align:center;">
+    <div class="section-tag">Experiencias reales</div>
+    <h2>Lo que sienten nuestras clientas</h2>
+  </div>
+  <div class="rev-grid">
+    <div class="rev-card"><div class="rev-photo"><img src="https://images.unsplash.com/photo-1554151228-14d9def656e4?w=500&q=80" alt="Beatriz Morales" loading="lazy"/></div><div class="rev-body"><div class="rev-stars">★★★★★</div><blockquote>"Fui por primera vez y fue una experiencia increíble. El ambiente, el trato, los aromas... salí sintiéndome nueva. Es mi lugar de desconexión definitiva."</blockquote><div class="rev-name">Beatriz Morales</div></div></div>
+    <div class="rev-card"><div class="rev-photo"><img src="https://images.unsplash.com/photo-1499887142886-791eca5918cd?w=500&q=80" alt="Claudia y Marcos" loading="lazy"/></div><div class="rev-body"><div class="rev-stars">★★★★★</div><blockquote>"Le regalé el ritual en pareja para nuestro aniversario y fue lo mejor que pude elegir. Nos recibieron con tanto cariño y profesionalismo."</blockquote><div class="rev-name">Claudia y Marcos</div></div></div>
+    <div class="rev-card"><div class="rev-photo"><img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=500&q=80" alt="Patricia Suárez" loading="lazy"/></div><div class="rev-body"><div class="rev-stars">★★★★★</div><blockquote>"Llevo tres meses yendo cada dos semanas. El dolor de espalda que tenía mejoró notablemente. Ya no puedo vivir sin esta rutina."</blockquote><div class="rev-name">Patricia Suárez</div></div></div>
+  </div>
+</section>
+<footer><p>© 2025 <span>Centro Spa Serenidad</span> · Bienestar y Relajación · Sitio web por <span>Rotuveloper</span></p></footer>
+<div class="wa-float"><a href="#" class="wa-btn-fix" aria-label="WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M16 3C9.373 3 4 8.373 4 15c0 2.385.698 4.607 1.902 6.476L4 29l7.745-2.03A11.9 11.9 0 0016 27c6.627 0 12-5.373 12-12S22.627 3 16 3zm5.52 17.41c-.302-.15-1.788-.882-2.065-.982-.277-.1-.479-.15-.68.15-.2.302-.776.983-.952 1.185-.175.2-.35.225-.652.075-.302-.15-1.276-.47-2.43-1.5-.9-.8-1.507-1.787-1.683-2.09-.176-.3-.019-.463.132-.613.136-.135.302-.352.453-.527.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.527-.075-.15-.68-1.638-.932-2.243-.245-.588-.494-.508-.68-.518l-.578-.01c-.2 0-.527.075-.803.375s-1.054 1.03-1.054 2.513 1.08 2.914 1.23 3.115c.15.2 2.124 3.242 5.147 4.545.72.31 1.28.496 1.718.635.722.23 1.38.197 1.9.12.58-.086 1.788-.73 2.04-1.437.253-.706.253-1.312.177-1.437-.075-.125-.277-.2-.578-.35z"/></svg></a></div>
+</body>
+</html>

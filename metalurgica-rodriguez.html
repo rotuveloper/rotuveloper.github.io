@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Metalúrgica Rodríguez | Piezas y Servicios Industriales en Argentina</title>
+  <meta name="description" content="Metalúrgica Rodríguez: fabricación de piezas metálicas, torno CNC, soldadura y estructuras. Más de 30 años de experiencia industrial."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--steel:#1c2331;--steel2:#242f41;--iron:#2d3a4a;--rust:#c0460a;--rust2:#e05a1f;--silver:#8fa0b4;--light:#d4dde8;--white:#f0f4f8;--text:#e8edf2;--muted:#8fa0b4;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--steel);color:var(--text);font-family:'IBM Plex Sans',sans-serif;overflow-x:hidden;}
+    .rotuveloper-badge{position:fixed;bottom:1rem;left:1rem;background:#050a05;color:#00ff41;font-family:monospace;font-size:0.68rem;padding:0.4rem 0.8rem;border-radius:3px;border:1px solid #00ff41;z-index:9999;text-decoration:none;letter-spacing:1px;opacity:0.85;transition:opacity 0.3s;}
+    .rotuveloper-badge:hover{opacity:1;}
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(24,31,45,0.97);backdrop-filter:blur(10px);height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;border-bottom:3px solid var(--rust);}
+    .nav-logo{display:flex;align-items:center;gap:0.8rem;text-decoration:none;}
+    .nav-logo-mark{width:38px;height:38px;background:var(--rust);display:flex;align-items:center;justify-content:center;}
+    .nav-logo-mark svg{width:20px;height:20px;fill:#fff;}
+    .nav-logo-text{font-family:'Oswald',sans-serif;font-size:1rem;font-weight:700;color:#fff;letter-spacing:2px;text-transform:uppercase;line-height:1.1;}
+    .nav-logo-sub{font-size:0.58rem;color:var(--muted);letter-spacing:3px;text-transform:uppercase;}
+    .nav-links{display:flex;gap:2rem;list-style:none;}
+    .nav-links a{color:var(--silver);text-decoration:none;font-size:0.78rem;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;transition:color 0.3s;}
+    .nav-links a:hover{color:var(--rust2);}
+    .nav-cta{background:var(--rust);color:#fff!important;padding:0.5rem 1.2rem;}
+    #hero{min-height:100vh;position:relative;display:flex;align-items:center;padding:80px 2rem 4rem;overflow:hidden;}
+    .hero-bg{position:absolute;inset:0;}
+    .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:right center;}
+    .hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(24,31,45,0.97) 45%,rgba(24,31,45,0.65));}
+    .hero-stripe{position:absolute;top:0;left:0;bottom:0;width:4px;background:repeating-linear-gradient(to bottom,var(--rust) 0,var(--rust) 15px,transparent 15px,transparent 30px);z-index:2;}
+    .hero-inner{position:relative;z-index:2;max-width:680px;}
+    .hero-eyebrow{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;}
+    .hero-eyebrow-line{width:40px;height:3px;background:var(--rust);}
+    .hero-eyebrow span{font-size:0.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--rust2);font-weight:600;}
+    #hero h1{font-family:'Oswald',sans-serif;font-size:clamp(2.8rem,6vw,5rem);font-weight:700;text-transform:uppercase;line-height:0.95;margin-bottom:1.5rem;letter-spacing:1px;}
+    #hero h1 em{font-style:normal;color:var(--rust2);}
+    #hero p{color:var(--silver);font-size:1rem;line-height:1.8;max-width:520px;margin-bottom:2.5rem;}
+    .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;}
+    .btn-rust{display:inline-flex;align-items:center;gap:0.6rem;background:var(--rust);color:#fff;padding:0.9rem 2rem;font-family:'Oswald',sans-serif;font-weight:600;font-size:0.95rem;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:all 0.3s;}
+    .btn-rust:hover{background:var(--rust2);transform:translateY(-2px);}
+    .btn-steel-outline{display:inline-flex;align-items:center;gap:0.6rem;background:var(--iron);color:var(--text);padding:0.9rem 2rem;font-family:'Oswald',sans-serif;font-weight:600;font-size:0.95rem;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border:1px solid rgba(255,255,255,0.1);transition:all 0.3s;}
+    .btn-steel-outline:hover{border-color:var(--rust);}
+    .cert-bar{background:var(--iron);padding:2rem;border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05);}
+    .cert-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);gap:1.5rem;align-items:center;text-align:center;}
+    .cert-item{padding:1rem;}
+    .cert-num{font-family:'Oswald',sans-serif;font-size:1.8rem;font-weight:700;color:var(--rust2);line-height:1;}
+    .cert-label{font-size:0.68rem;letter-spacing:2px;text-transform:uppercase;color:var(--silver);margin-top:0.3rem;}
+    #productos{padding:6rem 2rem;background:var(--steel2);}
+    .section-head{max-width:1100px;margin:0 auto 3rem;}
+    .section-eyebrow{display:flex;align-items:center;gap:1rem;margin-bottom:0.8rem;}
+    .section-eyebrow-line{width:30px;height:3px;background:var(--rust);}
+    .section-eyebrow span{font-size:0.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--rust2);font-weight:600;}
+    h2{font-family:'Oswald',sans-serif;font-size:clamp(1.8rem,3vw,2.8rem);font-weight:700;text-transform:uppercase;color:var(--text);}
+    .prod-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+    .prod-card{background:var(--steel);border:1px solid rgba(255,255,255,0.06);overflow:hidden;transition:all 0.3s;}
+    .prod-card:hover{border-color:var(--rust);transform:translateY(-4px);}
+    .prod-img{height:200px;overflow:hidden;}
+    .prod-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s;}
+    .prod-card:hover .prod-img img{transform:scale(1.05);}
+    .prod-body{padding:1.5rem;}
+    .prod-cat{font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--rust2);font-weight:600;margin-bottom:0.3rem;}
+    .prod-card h3{font-family:'Oswald',sans-serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;margin-bottom:0.5rem;}
+    .prod-card p{color:var(--silver);font-size:0.82rem;line-height:1.7;margin-bottom:1.2rem;}
+    .prod-specs{display:flex;flex-direction:column;gap:0.4rem;margin-bottom:1.2rem;}
+    .ps{display:flex;gap:0.6rem;font-size:0.75rem;color:var(--muted);align-items:flex-start;}
+    .ps-dot{width:3px;height:3px;border-radius:50%;background:var(--rust);flex-shrink:0;margin-top:5px;}
+    .prod-link{font-size:0.75rem;color:var(--rust2);text-decoration:none;font-weight:600;letter-spacing:1px;text-transform:uppercase;}
+    #proceso{padding:6rem 2rem;background:var(--steel);}
+    .process-wrap{max-width:1100px;margin:3rem auto 0;display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
+    .process-step{padding:2.5rem 2rem;border-right:1px solid rgba(255,255,255,0.06);}
+    .process-step:last-child{border-right:none;}
+    .ps-num{font-family:'Oswald',sans-serif;font-size:3rem;font-weight:700;color:rgba(192,70,10,0.15);line-height:1;margin-bottom:1rem;}
+    .process-step h3{font-family:'Oswald',sans-serif;font-size:1rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:0.8rem;}
+    .process-step p{font-size:0.82rem;color:var(--silver);line-height:1.7;}
+    .proceso-img{height:300px;overflow:hidden;max-width:1100px;margin:3rem auto 0;}
+    .proceso-img img{width:100%;height:100%;object-fit:cover;}
+    #clientes{padding:6rem 2rem;background:var(--steel2);}
+    .clients-grid{max-width:1100px;margin:3rem auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;}
+    .client-card{background:var(--steel);border:1px solid rgba(255,255,255,0.05);padding:2rem;border-left:3px solid var(--rust);}
+    .client-quote{font-style:italic;color:var(--silver);font-size:0.88rem;line-height:1.7;margin-bottom:1.5rem;}
+    .client-name{font-family:'Oswald',sans-serif;font-weight:600;font-size:0.9rem;text-transform:uppercase;letter-spacing:1px;}
+    .client-company{font-size:0.72rem;color:var(--rust2);}
+    #contacto{padding:6rem 2rem;background:var(--steel);border-top:3px solid var(--rust);}
+    .contact-grid{max-width:1100px;margin:3rem auto 0;display:grid;grid-template-columns:1fr 1fr;gap:4rem;}
+    .contact-left h3{font-family:'Oswald',sans-serif;font-size:1.8rem;font-weight:700;text-transform:uppercase;margin-bottom:1rem;}
+    .contact-left p{color:var(--silver);font-size:0.9rem;line-height:1.8;margin-bottom:2rem;}
+    .contact-data{display:flex;flex-direction:column;gap:1rem;}
+    .cd{display:flex;align-items:flex-start;gap:1rem;}
+    .cd-line{width:2px;height:40px;background:var(--rust);flex-shrink:0;margin-top:4px;}
+    .cd-label{font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--rust2);}
+    .cd-val{font-size:0.88rem;color:var(--text);}
+    .contact-right{background:var(--iron);padding:2.5rem;border:1px solid rgba(255,255,255,0.06);}
+    .form-group{margin-bottom:1.2rem;}
+    .form-group label{display:block;font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--rust2);margin-bottom:0.5rem;}
+    .form-group input,.form-group textarea,.form-group select{width:100%;background:var(--steel);border:1px solid rgba(255,255,255,0.1);padding:0.8rem 1rem;color:var(--text);font-family:'IBM Plex Sans',sans-serif;font-size:0.85rem;outline:none;transition:border-color 0.3s;}
+    .form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--rust);}
+    .form-group textarea{min-height:100px;resize:vertical;}
+    .form-group select option{background:var(--steel);}
+    footer{background:#111820;padding:2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;border-top:1px solid rgba(255,255,255,0.05);}
+    footer p{color:rgba(255,255,255,0.2);font-size:0.78rem;}
+    footer span{color:var(--rust2);}
+    .wa-float{position:fixed;bottom:1.5rem;right:1.5rem;z-index:9000;}
+    .wa-btn-fix{width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.45);text-decoration:none;animation:wapulse 2.5s infinite;}
+    .wa-btn-fix svg{width:30px;height:30px;fill:#fff;}
+    @keyframes wapulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.4);}50%{box-shadow:0 4px 40px rgba(37,211,102,0.7),0 0 0 10px rgba(37,211,102,0.1);}}
+    @media(max-width:768px){.nav-links{display:none;}.cert-inner{grid-template-columns:repeat(2,1fr);}.prod-grid,.process-wrap,.clients-grid,.contact-grid{grid-template-columns:1fr;}.process-step{border-right:none;border-bottom:1px solid rgba(255,255,255,0.06);}footer{flex-direction:column;text-align:center;}}
+  </style>
+</head>
+<body>
+<a href="https://rotuveloper.com" class="rotuveloper-badge" target="_blank">Sitio hecho por Rotuveloper</a>
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-mark"><svg viewBox="0 0 24 24"><path d="M12 15.5A3.5 3.5 0 0 1 8.5 12 3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.92c.04-.3.07-.62.07-.95s-.03-.66-.07-1l2.16-1.68c.19-.15.24-.42.12-.64l-2.04-3.54c-.12-.22-.39-.3-.61-.22l-2.55 1.03c-.53-.4-1.1-.73-1.72-.98l-.38-2.72C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.72c-.62.25-1.19.58-1.72.98L4.86 5.09c-.22-.08-.49 0-.61.22L2.21 8.85c-.13.22-.07.49.12.64L4.49 11.17c-.04.34-.07.67-.07 1s.03.65.07.97l-2.15 1.68c-.19.15-.24.42-.12.64l2.04 3.54c.12.22.39.3.61.22l2.55-1.03c.53.4 1.1.73 1.72.98l.38 2.72c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.72c.62-.25 1.19-.58 1.72-.98l2.55 1.03c.22.08.49 0 .61-.22l2.04-3.54c.12-.22.07-.49-.12-.64l-2.14-1.68z"/></svg></div>
+    <div><div class="nav-logo-text">Metalúrgica Rodríguez</div><div class="nav-logo-sub">Desde 1994 · Buenos Aires</div></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#productos">Productos</a></li>
+    <li><a href="#proceso">Proceso</a></li>
+    <li><a href="#clientes">Clientes</a></li>
+    <li><a href="#contacto" class="nav-cta">Cotizar</a></li>
+  </ul>
+</nav>
+<section id="hero">
+  <div class="hero-bg"><img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=1600&q=85" alt="Metalúrgica industrial" fetchpriority="high"/></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-stripe"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow"><div class="hero-eyebrow-line"></div><span>Metalúrgica industrial · Desde 1994</span></div>
+    <h1>Precisión <em>en</em> cada pieza.<br>Calidad <em>en</em> cada proceso.</h1>
+    <p>Fabricamos piezas metálicas, estructuras y componentes industriales con más de 30 años de experiencia. Torno CNC, soldadura TIG/MIG y matricería a medida.</p>
+    <div class="hero-btns">
+      <a href="#contacto" class="btn-rust">Pedir cotización</a>
+      <a href="#productos" class="btn-steel-outline">Ver catálogo</a>
+    </div>
+  </div>
+</section>
+<div class="cert-bar">
+  <div class="cert-inner">
+    <div class="cert-item"><div class="cert-num">30+</div><div class="cert-label">Años de experiencia</div></div>
+    <div class="cert-item"><div class="cert-num">CNC</div><div class="cert-label">Última generación</div></div>
+    <div class="cert-item"><div class="cert-num">ISO</div><div class="cert-label">Certificación 9001</div></div>
+    <div class="cert-item"><div class="cert-num">24hs</div><div class="cert-label">Cotización garantizada</div></div>
+    <div class="cert-item"><div class="cert-num">500+</div><div class="cert-label">Piezas en catálogo</div></div>
+  </div>
+</div>
+<section id="productos">
+  <div class="section-head">
+    <div class="section-eyebrow"><div class="section-eyebrow-line"></div><span>Catálogo de servicios</span></div>
+    <h2>Especialidades y servicios</h2>
+    <p style="color:var(--silver);margin-top:0.8rem;font-size:0.9rem;max-width:600px;">Producción seriada o piezas únicas. Trabajamos con acero, aluminio, hierro fundido y materiales especiales según requerimiento.</p>
+  </div>
+  <div class="prod-grid">
+    <div class="prod-card"><div class="prod-img"><img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&q=80" alt="Torno CNC" loading="lazy"/></div><div class="prod-body"><div class="prod-cat">Mecanizado</div><h3>Torno CNC</h3><p>Mecanizado de precisión para piezas rotacionales. Tolerancias de hasta 0.01mm. Producción desde una pieza hasta series de miles.</p><div class="prod-specs"><div class="ps"><div class="ps-dot"></div>Diámetros de 5mm a 400mm</div><div class="ps"><div class="ps-dot"></div>Acero, aluminio, bronce, nylon</div></div><a href="#contacto" class="prod-link">Solicitar ficha técnica</a></div></div>
+    <div class="prod-card"><div class="prod-img"><img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=600&q=80" alt="Soldadura TIG MIG" loading="lazy"/></div><div class="prod-body"><div class="prod-cat">Soldadura</div><h3>Soldadura TIG/MIG</h3><p>Soldadura de alta resistencia para estructuras y piezas industriales. Certificados para aplicaciones de alta presión y temperatura.</p><div class="prod-specs"><div class="ps"><div class="ps-dot"></div>Acero inoxidable y carbono</div><div class="ps"><div class="ps-dot"></div>Control radiográfico disponible</div></div><a href="#contacto" class="prod-link">Solicitar ficha técnica</a></div></div>
+    <div class="prod-card"><div class="prod-img"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Estructuras metálicas" loading="lazy"/></div><div class="prod-body"><div class="prod-cat">Estructuras</div><h3>Estructuras metálicas</h3><p>Diseño y fabricación de estructuras para industria, construcción y agricultura. Entregamos armadas o en partes para montaje.</p><div class="prod-specs"><div class="ps"><div class="ps-dot"></div>Galpones y plataformas</div><div class="ps"><div class="ps-dot"></div>Puertas y portones industriales</div></div><a href="#contacto" class="prod-link">Solicitar ficha técnica</a></div></div>
+    <div class="prod-card"><div class="prod-img"><img src="https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?w=600&q=80" alt="Matrices y troqueles" loading="lazy"/></div><div class="prod-body"><div class="prod-cat">Matricería</div><h3>Matrices y troqueles</h3><p>Diseño y construcción de matrices para estampado, troquelado y embutido. Acero para herramientas con tratamiento térmico.</p><div class="prod-specs"><div class="ps"><div class="ps-dot"></div>Matrices progresivas</div><div class="ps"><div class="ps-dot"></div>Revisión y mantenimiento</div></div><a href="#contacto" class="prod-link">Solicitar ficha técnica</a></div></div>
+    <div class="prod-card"><div class="prod-img"><img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&q=80" alt="Mecanizado general" loading="lazy"/></div><div class="prod-body"><div class="prod-cat">Mecanizado</div><h3>Mecanizado general</h3><p>Fresado, taladrado, rectificado y tratamiento superficial. Capacidad para trabajos en serie o piezas únicas de alta complejidad.</p><div class="prod-specs"><div class="ps"><div class="ps-dot"></div>Fresado 3 y 4 ejes</div><div class="ps"><div class="ps-dot"></div>Sandblasting y pintura epóxi</div></div><a href="#contacto" class="prod-link">Solicitar ficha técnica</a></div></div>
+    <div class="prod-card"><div class="prod-img"><img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=600&q=80" alt="Repuestos industriales" loading="lazy"/></div><div class="prod-body"><div class="prod-cat">Repuestos</div><h3>Repuestos industriales</h3><p>Fabricación de repuestos a medida para maquinaria obsoleta o de importación difícil. Entrega rápida para minimizar paradas.</p><div class="prod-specs"><div class="ps"><div class="ps-dot"></div>Ingeniería inversa</div><div class="ps"><div class="ps-dot"></div>Entrega urgente disponible</div></div><a href="#contacto" class="prod-link">Solicitar ficha técnica</a></div></div>
+  </div>
+</section>
+<section id="proceso">
+  <div class="section-head">
+    <div class="section-eyebrow"><div class="section-eyebrow-line"></div><span>Metodología</span></div>
+    <h2>Cómo trabajamos</h2>
+  </div>
+  <div class="process-wrap">
+    <div class="process-step"><div class="ps-num">01</div><h3>Consulta y cotización</h3><p>Recibimos planos, modelos 3D o muestras. Cotización sin cargo en 24 horas hábiles.</p></div>
+    <div class="process-step"><div class="ps-num">02</div><h3>Análisis técnico</h3><p>Nuestros ingenieros revisan la factibilidad y proponen optimizaciones si corresponde.</p></div>
+    <div class="process-step"><div class="ps-num">03</div><h3>Fabricación</h3><p>Producción con control de calidad en cada etapa. Informes disponibles para el cliente.</p></div>
+    <div class="process-step"><div class="ps-num">04</div><h3>Entrega y soporte</h3><p>Despacho a todo el país. Soporte técnico post-entrega y garantía en todos nuestros productos.</p></div>
+  </div>
+  <div class="proceso-img"><img src="https://images.unsplash.com/photo-1605377377417-f26be5b63a9b?w=1400&q=80" alt="Planta metalúrgica Rodríguez" loading="lazy"/></div>
+</section>
+<section id="clientes">
+  <div class="section-head">
+    <div class="section-eyebrow"><div class="section-eyebrow-line"></div><span>Testimonios</span></div>
+    <h2>Lo que dicen nuestros clientes</h2>
+  </div>
+  <div class="clients-grid">
+    <div class="client-card"><p class="client-quote">"Trabajo con Rodríguez hace 8 años para repuestos de nuestra línea de producción. Precisión, puntualidad y calidad constante. Son el proveedor que todo industrial necesita."</p><div class="client-name">Ing. Alberto Sosa</div><div class="client-company">Jefe de Mantenimiento · Plásticos del Sur SA</div></div>
+    <div class="client-card"><p class="client-quote">"Necesitábamos una matriz compleja con tolerancias muy ajustadas. La entregaron antes del plazo y a la primera revisión. Excelente nivel técnico y atención."</p><div class="client-name">Roberto Cánepa</div><div class="client-company">Director de Operaciones · Fábrica MetalFlex</div></div>
+    <div class="client-card"><p class="client-quote">"Para repuestos de maquinaria de importación, son los mejores. Hacen ingeniería inversa con mucha prolijidad y a precios muy competitivos."</p><div class="client-name">Lic. Mariana Torres</div><div class="client-company">Compras · Grupo Industrial Norte</div></div>
+  </div>
+</section>
+<section id="contacto">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div class="section-eyebrow"><div class="section-eyebrow-line"></div><span>Cotizaciones</span></div>
+    <h2>Solicitá tu cotización</h2>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-left">
+      <h3>Hablemos de tu proyecto</h3>
+      <p>Envianos tus planos, especificaciones técnicas o una descripción del trabajo. Respondemos en 24hs hábiles con precio y plazo de entrega.</p>
+      <div class="contact-data">
+        <div class="cd"><div class="cd-line"></div><div><div class="cd-label">Teléfono</div><div class="cd-val">+54 11 xxxx-xxxx</div></div></div>
+        <div class="cd"><div class="cd-line"></div><div><div class="cd-label">Email técnico</div><div class="cd-val">cotizaciones@metalurgicarodriguez.com.ar</div></div></div>
+        <div class="cd"><div class="cd-line"></div><div><div class="cd-label">Planta industrial</div><div class="cd-val">Parque Industrial La Matanza, Buenos Aires</div></div></div>
+        <div class="cd"><div class="cd-line"></div><div><div class="cd-label">Horario de planta</div><div class="cd-val">Lun–Vie 7:00–18:00 · Sáb 7:00–12:00</div></div></div>
+      </div>
+      <a href="#" class="btn-rust" style="display:inline-flex;margin-top:2rem;">Enviar planos por WhatsApp</a>
+    </div>
+    <div class="contact-right">
+      <div class="form-group"><label>Empresa / Contacto</label><input type="text" placeholder="Razón social o nombre"/></div>
+      <div class="form-group"><label>Email o WhatsApp</label><input type="text" placeholder="Para el presupuesto"/></div>
+      <div class="form-group"><label>Tipo de trabajo</label><select><option value="">— Seleccioná —</option><option>Torno CNC</option><option>Soldadura estructural</option><option>Fabricación de matricería</option><option>Repuestos industriales</option><option>Estructuras metálicas</option><option>Otro</option></select></div>
+      <div class="form-group"><label>Descripción técnica</label><textarea placeholder="Describí la pieza, material, medidas, tolerancias y cantidad."></textarea></div>
+      <div class="form-group"><label>Cantidad aproximada</label><input type="text" placeholder="Ej: 50 piezas / 1 estructura / producción mensual"/></div>
+      <a href="#" class="btn-rust" style="display:block;text-align:center;">Solicitar presupuesto sin cargo</a>
+    </div>
+  </div>
+</section>
+<footer>
+  <p>© 2025 <span>Metalúrgica Rodríguez SA</span> — CUIT 30-xxxxxxxx-x · ISO 9001:2015</p>
+  <p>Sitio web desarrollado por <span>Rotuveloper</span></p>
+</footer>
+<div class="wa-float"><a href="#" class="wa-btn-fix" aria-label="WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M16 3C9.373 3 4 8.373 4 15c0 2.385.698 4.607 1.902 6.476L4 29l7.745-2.03A11.9 11.9 0 0016 27c6.627 0 12-5.373 12-12S22.627 3 16 3zm5.52 17.41c-.302-.15-1.788-.882-2.065-.982-.277-.1-.479-.15-.68.15-.2.302-.776.983-.952 1.185-.175.2-.35.225-.652.075-.302-.15-1.276-.47-2.43-1.5-.9-.8-1.507-1.787-1.683-2.09-.176-.3-.019-.463.132-.613.136-.135.302-.352.453-.527.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.527-.075-.15-.68-1.638-.932-2.243-.245-.588-.494-.508-.68-.518l-.578-.01c-.2 0-.527.075-.803.375s-1.054 1.03-1.054 2.513 1.08 2.914 1.23 3.115c.15.2 2.124 3.242 5.147 4.545.72.31 1.28.496 1.718.635.722.23 1.38.197 1.9.12.58-.086 1.788-.73 2.04-1.437.253-.706.253-1.312.177-1.437-.075-.125-.277-.2-.578-.35z"/></svg></a></div>
+</body>
+</html>
